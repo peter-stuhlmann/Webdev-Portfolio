@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import NotFound from './components/NotFound';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route exact path="/" component={Home} />
         <Route path="/impressum" component={LegalNotice} />
         <Route path="/datenschutzerklaerung" component={PrivacyPolicy} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </BrowserRouter>
