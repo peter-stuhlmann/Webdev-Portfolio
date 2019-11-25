@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Footer() {
@@ -6,10 +7,10 @@ export default function Footer() {
     <Fragment>
       <StyledFooter>
         <p>&copy; Peter R. Stuhlmann, 2019</p>
-        <div>
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutzerklärung</a>
-        </div>
+        <nav>
+          <Link to="/impressum">Impressum</Link>
+          <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
+        </nav>
       </StyledFooter>
     </Fragment>
   );
@@ -32,7 +33,7 @@ const StyledFooter = styled.footer`
     }
   }
 
-  div {
+  nav {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
