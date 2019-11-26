@@ -18,7 +18,6 @@ const StyledGlobalStyles = createGlobalStyle`
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
-    text-transform: uppercase;
 
     .wrap {
       width: 100%;
@@ -30,11 +29,29 @@ const StyledGlobalStyles = createGlobalStyle`
 
     h2 {
       text-align: center;
+      text-transform: uppercase;
     }
 
-    .description {
-      color: grey;
-      text-align: center;
+    article {
+      .description {
+        color: grey;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 10px 0;
+      }
+
+      p {
+        text-align: center;
+        margin: 35px 0;      }
+    }
+
+    hr {
+      background-color: #fff;
+      padding: 0;
+      margin: 80px;
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     }
   }
 `;
