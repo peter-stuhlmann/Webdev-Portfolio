@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default function ScrollDown() {
   return (
-    <StyledScrollDown href="#">
+    <StyledScrollDown href="#portfolio">
       <span>SCROLL DOWN</span>
       <span />
     </StyledScrollDown>

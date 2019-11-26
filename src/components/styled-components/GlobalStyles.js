@@ -8,12 +8,17 @@ const StyledGlobalStyles = createGlobalStyle`
     src: url(${RalewayRegular});
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: #fff;
     font-family: 'WebDevFont Regular', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
+    text-transform: uppercase;
 
     .wrap {
       width: 100%;
@@ -21,6 +26,15 @@ const StyledGlobalStyles = createGlobalStyle`
       margin: 50px auto;
       padding: 15px;
       box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .description {
+      color: grey;
+      text-align: center;
     }
   }
 `;
