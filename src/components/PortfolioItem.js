@@ -5,6 +5,7 @@ import BackgroundImage from '../assets/img/portfolio-item-background.jpg';
 export default function PortfolioItem() {
   return (
     <StyledPortfolioItem>
+      <div className="overlay" />
       <div className="content">
         <div className="number">
           <span>01</span>
@@ -30,6 +31,24 @@ const StyledPortfolioItem = styled.section`
   background-position: center;
   background-size: cover;
   background-image: url(${BackgroundImage});
+
+  .overlay {
+    position: absolute;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1e273896;
+  }
+
+  &:hover .overlay {
+    width: 100%;
+  }
 
   .content {
     position: relative;
@@ -71,7 +90,7 @@ const StyledPortfolioItem = styled.section`
           height: 1px;
           width: 80px;
           margin-right: 12px;
-          background: #000;
+          background-color: #000;
         }
       }
     }
@@ -129,5 +148,40 @@ const StyledPortfolioItem = styled.section`
         width: calc(100% + 10px);
       }
     }
+  }
+
+  &::before {
+    position: absolute;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    z-index: 1;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    color: black;
+  }
+
+  &:hover::before {
+    transform-origin: right;
+    width: 0;
+  }
+
+  &:hover .number span::before {
+    background-color: #fff;
+    width: 120px;
+  }
+
+  &:hover .number span,
+  &:hover h3,
+  &:hover p,
+  &:hover .button {
+    color: #fff;
+  }
+
+  &:hover .button:before,
+  &:hover .button:after {
+    border-color: #fff;
   }
 `;
