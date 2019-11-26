@@ -6,7 +6,9 @@ export default function Footer() {
   return (
     <Fragment>
       <StyledFooter>
-        <p>&copy; Peter R. Stuhlmann, 2019</p>
+        <p>
+          <Link to="/">&copy; Peter R. Stuhlmann</Link>, 2019
+        </p>
         <nav>
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
@@ -30,6 +32,16 @@ const StyledFooter = styled.footer`
     @media screen and (max-width: 768px) {
       flex: 0 0 100%;
       text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ca1414;
+
+      @media screen and (max-width: 768px) {
+        flex: 0 0 100%;
+        text-align: center;
+      }
     }
   }
 
