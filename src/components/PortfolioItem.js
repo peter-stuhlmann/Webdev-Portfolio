@@ -6,6 +6,9 @@ export default function PortfolioItem() {
   return (
     <StyledPortfolioItem>
       <div className="content">
+        <div className="number">
+          <span>01</span>
+        </div>
         <div className="text">
           <h3>Lorem ipsum</h3>
           <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
@@ -46,6 +49,30 @@ const StyledPortfolioItem = styled.section`
 
       p {
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+      }
+    }
+
+    .number {
+      margin-top: 10px;
+
+      span {
+        position: relative;
+        left: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        top: -4px;
+
+        &::before {
+          position: relative;
+          left: 0;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+          content: '';
+          top: -5px;
+          display: inline-block;
+          height: 1px;
+          width: 80px;
+          margin-right: 12px;
+          background: #000;
+        }
       }
     }
 
