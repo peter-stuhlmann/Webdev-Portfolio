@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 export default function PrivacyPolicy() {
   return (
-    <Fragment>
+    <div className="wrap">
       <h1>Privacy Policy</h1>
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -15,6 +15,6 @@ export default function PrivacyPolicy() {
         rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
         ipsum dolor sit amet.
       </p>
-    </Fragment>
+    </div>
   );
 }

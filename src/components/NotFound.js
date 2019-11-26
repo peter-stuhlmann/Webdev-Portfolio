@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 export default function NotFound() {
   return (
-    <Fragment>
+    <div className="wrap">
       <h1>Error 404</h1>
-    </Fragment>
+    </div>
   );
 }
