@@ -6,10 +6,12 @@ import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
+import { GlobalStyles } from './components/styled-components/GlobalStyles';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <GlobalStyles />
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
