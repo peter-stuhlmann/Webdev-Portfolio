@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BackgroundImage from '../assets/img/portfolio-item-background.jpg';
+import GithubCorner from './GithubCorner';
 
 export default function PortfolioItem() {
   return (
@@ -17,6 +18,7 @@ export default function PortfolioItem() {
         <a href="#" className="button">
           Live Demo
         </a>
+        <GithubCorner />
       </div>
     </StyledPortfolioItem>
   );
