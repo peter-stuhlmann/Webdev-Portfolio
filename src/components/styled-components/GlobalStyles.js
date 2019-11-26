@@ -1,9 +1,16 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import RalewayRegular from '../../assets/fonts/raleway/Raleway-Regular.ttf';
 
 const StyledGlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'WebDevFont Regular';
+    src: url(${RalewayRegular});
+  }
+
   body {
     background-color: #fff;
+    font-family: 'WebDevFont Regular', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
