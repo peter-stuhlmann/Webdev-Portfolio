@@ -6,8 +6,10 @@ export default function PortfolioItem() {
   return (
     <StyledPortfolioItem>
       <div className="content">
-        <h3>Lorem ipsum</h3>
-        <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <div className="text">
+          <h3>Lorem ipsum</h3>
+          <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        </div>
       </div>
     </StyledPortfolioItem>
   );
@@ -30,5 +32,18 @@ const StyledPortfolioItem = styled.section`
     height: 100%;
     display: flex;
     align-items: center;
+
+    .text {
+      margin: 33px 0 0 50px;
+
+      h3 {
+        margin-bottom: 15px;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+      }
+
+      p {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+      }
+    }
   }
 `;
