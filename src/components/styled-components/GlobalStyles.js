@@ -30,6 +30,7 @@ const StyledGlobalStyles = createGlobalStyle`
     h2 {
       text-align: center;
       text-transform: uppercase;
+      font-size: 2em;
     }
 
     article {
