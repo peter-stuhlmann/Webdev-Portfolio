@@ -76,6 +76,12 @@ const StyledPortfolioItem = styled.section`
       h3 {
         margin-bottom: 15px;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+
+        span {
+          font-size: 16px;
+          font-weight: normal;
+          font-style: italic;
+        }
       }
 
       p {
