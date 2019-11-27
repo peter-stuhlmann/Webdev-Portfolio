@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import BackgroundImage from '../assets/img/portfolio-item-background.jpg';
 import GithubCorner from './GithubCorner';
 
 export default function PortfolioItem(props) {
-  const { number, title, description, liveDemo, githubLink } = props;
+  const { number, title, description, techStack, liveDemo, githubLink } = props;
   return (
     <StyledPortfolioItem>
       <div className="overlay" />
@@ -13,8 +13,15 @@ export default function PortfolioItem(props) {
           <span>{number}</span>
         </div>
         <div className="text">
-          <h3>{title}</h3>
-          <p>{description}</p>
+          <h3>
+            {title}
+            {description && (
+              <Fragment>
+                &nbsp;<span>({description})</span>
+              </Fragment>
+            )}
+          </h3>
+          <p>{techStack}</p>
         </div>
         {liveDemo && (
           <a href={liveDemo} className="button">

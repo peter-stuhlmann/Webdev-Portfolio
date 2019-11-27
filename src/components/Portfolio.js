@@ -16,12 +16,20 @@ export default function Portfolio() {
         </article>
       </div>
       {PortfolioContent.map(element => {
-        const { number, title, description, liveDemo, githubLink } = element;
+        const {
+          number,
+          title,
+          description,
+          techStack,
+          liveDemo,
+          githubLink,
+        } = element;
         return (
           <PortfolioItem
             key={number}
             number={number}
             title={title}
+            techStack={techStack}
             description={description}
             liveDemo={liveDemo}
             githubLink={githubLink}
