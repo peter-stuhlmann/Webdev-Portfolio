@@ -15,8 +15,35 @@
       "dest": "/static/$1"
     },
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
-    { "src": "/logo192.png", "dest": "/logo192.png" },
-    { "src": "/logo512.png", "dest": "/logo512.png" },
+    {
+      "src": "/android-chrome-192x192.png",
+      "dest": "/android-chrome-192x192.png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "dest": "/android-chrome-512x512.png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "dest": "/apple-touch-icon.png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "dest": "/favicon-16x16.png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "dest": "/favicon-32x32.png"
+    },
+    {
+      "src": "/mstile-150x150.png",
+      "dest": "/mstile-150x150.png"
+    },
+    {
+      "src": "/safari-pinned-tabs.svg",
+      "dest": "/safari-pinned-tabs.svg"
+    },
+    { "src": "/browserconfig.xml", "dest": "/browserconfig.xml" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
     {
