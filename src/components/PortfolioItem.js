@@ -3,22 +3,25 @@ import styled from 'styled-components';
 import BackgroundImage from '../assets/img/portfolio-item-background.jpg';
 import GithubCorner from './GithubCorner';
 
-export default function PortfolioItem() {
+export default function PortfolioItem(props) {
+  const { number, title, description, liveDemo, githubLink } = props;
   return (
     <StyledPortfolioItem>
       <div className="overlay" />
       <div className="content">
         <div className="number">
-          <span>01</span>
+          <span>{number}</span>
         </div>
         <div className="text">
-          <h3>Lorem ipsum</h3>
-          <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+          <h3>{title}</h3>
+          <p>{description}</p>
         </div>
-        <a href="#" className="button">
-          Live Demo
-        </a>
-        <GithubCorner />
+        {liveDemo && (
+          <a href={liveDemo} className="button">
+            Live Demo
+          </a>
+        )}
+        {githubLink && <GithubCorner githubLink={githubLink} />}
       </div>
     </StyledPortfolioItem>
   );

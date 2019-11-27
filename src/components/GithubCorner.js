@@ -1,9 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-export default function GithubCorner() {
+export default function GithubCorner(props) {
+  const { githubLink } = props;
+
   return (
-    <Octocat href="#">
+    <Octocat href={githubLink}>
       <svg width="80" height="80" viewBox="0 0 250 250">
         <path
           d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"
