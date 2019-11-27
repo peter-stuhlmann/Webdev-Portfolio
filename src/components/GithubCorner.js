@@ -53,6 +53,10 @@ const Octocat = styled.a`
 
     &:hover .octo-arm {
       animation: ${OctocatArm} 560ms ease-in-out;
+
+      @media only screen and (max-width: 567px) {
+        animation: none;
+      }
     }
   }
 `;

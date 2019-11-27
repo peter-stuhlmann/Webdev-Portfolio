@@ -189,4 +189,72 @@ const StyledPortfolioItem = styled.section`
   &:hover .button:after {
     border-color: #fff;
   }
+
+
+  @media only screen and (max-width: 768px) {
+      .overlay {
+        width: 100%;
+      }
+
+  
+      .number span,
+      .text h3,
+      .text p,
+      .button {
+        color: #fff;
+      }
+  
+      .button {
+        right: 45px;
+  
+        &:before,
+        &:after {
+          border-color: #fff;
+          height: calc(100% + 10px);
+          width: calc(100% + 10px);
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    height: 280px;
+      
+    &::before {
+      background-color: transparent;
+    }
+      
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .number {
+      margin-top: 40px !important;
+  
+      span::before {
+        display: none !important;
+      }
+    }
+  
+    .text {
+      margin: 0 !important;
+      text-align: center;
+    }
+  
+    .button {
+      position: relative !important;
+      top: 18px;
+      left: 0;
+      right: 0;
+      color: #fff !important;
+      border: 1px solid #fff;
+
+      &::before,
+      &::after {
+        display: none !important
+      }
+    }
+  }
 `;
