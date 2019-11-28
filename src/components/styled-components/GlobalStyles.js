@@ -1,11 +1,17 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import RalewayRegular from '../../assets/fonts/raleway/Raleway-Regular.ttf';
+import SourceCodeProRegular from '../../assets/fonts/source-code-pro/SourceCodePro-Regular.ttf';
 
 const StyledGlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'WebDevFont Regular';
     src: url(${RalewayRegular});
+  }
+
+  @font-face {
+    font-family: 'WebDevFont SourceCode';
+    src: url(${SourceCodeProRegular});
   }
 
   html {
