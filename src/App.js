@@ -6,10 +6,12 @@ import LegalNotice from './components/LegalNotice';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import NotFound from './components/NotFound';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <GlobalStyles />
       <Switch>
         <Route exact path="/" component={Home} />
