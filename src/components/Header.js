@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import BackgroundImage from '../assets/img/peter-stuhlmann.jpg';
 import ContactIcons from './ContactIcons';
 import ScrollDown from './ScrollDown';
+import TypingEffect from './TypingEffect';
 
 export default function Header() {
   return (
     <StyledHeader>
-      <span>Header</span>
+      <TypingEffect />
       <ContactIcons />
       <ScrollDown />
     </StyledHeader>
