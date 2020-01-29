@@ -1,20 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Footer() {
   return (
-    <Fragment>
-      <StyledFooter>
-        <p>
-          <Link to="/">&copy; Peter R. Stuhlmann</Link>, 2019
-        </p>
-        <nav>
-          <Link to="/impressum">Impressum</Link>
-          <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
-        </nav>
-      </StyledFooter>
-    </Fragment>
+    <StyledFooter>
+      <p>
+        <Link to="/">&copy; Peter R. Stuhlmann</Link>, 2019
+      </p>
+      <nav>
+        <Link to="/impressum">Impressum</Link>
+        <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
+      </nav>
+    </StyledFooter>
   );
 }
 
@@ -26,7 +24,7 @@ const StyledFooter = styled.footer`
   background-color: #24292e;
 
   p {
-    color: #ca1414;
+    color: grey;
     margin: 0;
 
     @media screen and (max-width: 768px) {
@@ -36,7 +34,7 @@ const StyledFooter = styled.footer`
 
     a {
       text-decoration: none;
-      color: #ca1414;
+      color: grey;
 
       @media screen and (max-width: 768px) {
         flex: 0 0 100%;
@@ -58,7 +56,7 @@ const StyledFooter = styled.footer`
 
     a {
       text-decoration: none;
-      color: #ca1414;
+      color: grey;
 
       &:first-child {
         margin-right: 25px;
