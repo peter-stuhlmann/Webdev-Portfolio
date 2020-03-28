@@ -1,34 +1,38 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
+
+import { Context } from '../Context';
+
 import BackgroundImage from '../assets/img/portfolio-item-background.jpg';
 import GithubCorner from './GithubCorner';
 
-export default function PortfolioItem(props) {
-  const { number, title, description, techStack, liveDemo, githubLink } = props;
+export default function PortfolioItem() {
+  const { content } = useContext(Context);
+
   return (
     <StyledPortfolioItem>
       <div className="overlay" />
       <div className="content">
         <div className="number">
-          <span>{number}</span>
+          <span>{content.portfolio.item.number}</span>
         </div>
         <div className="text">
           <h3>
-            {title}
-            {description && (
+            {content.portfolio.item.title}
+            {content.portfolio.item.description && (
               <Fragment>
-                &nbsp;<span>({description})</span>
+                &nbsp;<span>({content.portfolio.item.description})</span>
               </Fragment>
             )}
           </h3>
-          <p>{techStack}</p>
+          <p>{content.portfolio.item.techStack}</p>
         </div>
-        {liveDemo && (
-          <a href={liveDemo} className="button">
+        {content.portfolio.item.liveDemo && (
+          <a href={content.portfolio.item.liveDemo} className="button">
             Live Demo
           </a>
         )}
-        {githubLink && <GithubCorner githubLink={githubLink} />}
+        {content.portfolio.item.githubLink && <GithubCorner />}
       </div>
     </StyledPortfolioItem>
   );

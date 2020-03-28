@@ -1,6 +1,5 @@
 import React from 'react';
 import PortfolioItem from './PortfolioItem';
-import { PortfolioContent } from './PortfolioContent';
 
 export default function Portfolio() {
   return (
@@ -15,27 +14,8 @@ export default function Portfolio() {
           </p>
         </article>
       </div>
-      {PortfolioContent.map(element => {
-        const {
-          number,
-          title,
-          description,
-          techStack,
-          liveDemo,
-          githubLink,
-        } = element;
-        return (
-          <PortfolioItem
-            key={number}
-            number={number}
-            title={title}
-            techStack={techStack}
-            description={description}
-            liveDemo={liveDemo}
-            githubLink={githubLink}
-          />
-        );
-      })}
+
+      <PortfolioItem />
     </section>
   );
 }

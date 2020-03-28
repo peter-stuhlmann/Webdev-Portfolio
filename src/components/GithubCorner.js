@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-export default function GithubCorner(props) {
-  const { githubLink } = props;
+import { Context } from '../Context';
+
+export default function GithubCorner() {
+  const { content } = useContext(Context);
 
   return (
-    <Octocat href={githubLink} aria-label="Quellcode ansehen">
+    <Octocat
+      href={content.portfolio.item.githubLink}
+      aria-label="Quellcode ansehen"
+    >
       <svg width="80" height="80" viewBox="0 0 250 250">
         <path
           d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"
