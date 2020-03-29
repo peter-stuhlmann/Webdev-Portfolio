@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundImage from '../assets/img/peter-stuhlmann.jpg';
 import ContactIcons from './ContactIcons';
 import ScrollDown from './ScrollDown';
 import TypingEffect from './TypingEffect';
@@ -22,7 +21,7 @@ const StyledHeader = styled.header`
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-image: url(${BackgroundImage});
+  background-image: url('img/peter-stuhlmann.jpg');
   background-color: rgba(0, 0, 0, 0.5);
   background-attachment: fixed;
   background-position: top;

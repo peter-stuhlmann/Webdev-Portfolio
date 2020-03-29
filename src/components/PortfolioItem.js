@@ -2,8 +2,6 @@ import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
 
 import { Context } from '../Context';
-
-import BackgroundImage from '../assets/img/portfolio-item-background.jpg';
 import GithubCorner from './GithubCorner';
 
 export default function PortfolioItem() {
@@ -19,11 +17,11 @@ export default function PortfolioItem() {
               <span>{item.number}</span>
             </div>
             <div className="text">
-              <h3>
-                {item.title}
-                {item.description && <span>({item.description})</span>}
-              </h3>
-              <p>{item.techStack}</p>
+              <h3>{item.title}</h3>
+              {item.description && (
+                <p className="description">({item.description})</p>
+              )}
+              {item.techStack && <p className="techstack">{item.techStack}</p>}
             </div>
             {item.liveDemo && (
               <a href={item.liveDemo} className="button">
@@ -46,7 +44,7 @@ const StyledPortfolioItem = styled.section`
   border-bottom: 1px solid #1e2738;
   background-position: center;
   background-size: cover;
-  background-image: url(${BackgroundImage});
+  background-image: url('img/portfolio-item-background.jpg');
 
   .overlay {
     position: absolute;
@@ -78,17 +76,19 @@ const StyledPortfolioItem = styled.section`
       margin: 33px 0 0 50px;
 
       h3 {
-        margin-bottom: 15px;
+        margin-bottom: 0;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
-
-        span {
-          font-size: 16px;
-          font-weight: normal;
-          font-style: italic;
-        }
       }
 
-      p {
+      .description {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: italic;
+        margin-top: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+      }
+
+      .techstack {
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
       }
     }
