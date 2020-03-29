@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { Context } from '../Context';
 
 export default function NotFound() {
+  const { content } = useContext(Context);
+
   return (
     <div className="wrap">
-      <h1>Error 404</h1>
+      <h1>{content.notFound.heading}</h1>
     </div>
   );
 }

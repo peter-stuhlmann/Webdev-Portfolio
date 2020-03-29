@@ -10,31 +10,31 @@ export default function PortfolioItem() {
   const { content } = useContext(Context);
 
   return (
-    <StyledPortfolioItem>
-      <div className="overlay" />
-      <div className="content">
-        <div className="number">
-          <span>{content.portfolio.item.number}</span>
-        </div>
-        <div className="text">
-          <h3>
-            {content.portfolio.item.title}
-            {content.portfolio.item.description && (
-              <Fragment>
-                &nbsp;<span>({content.portfolio.item.description})</span>
-              </Fragment>
+    <Fragment>
+      {content.portfolio.items.map(item => (
+        <StyledPortfolioItem key={item.number}>
+          <div className="overlay" />
+          <div className="content">
+            <div className="number">
+              <span>{item.number}</span>
+            </div>
+            <div className="text">
+              <h3>
+                {item.title}
+                {item.description && <span>({item.description})</span>}
+              </h3>
+              <p>{item.techStack}</p>
+            </div>
+            {item.liveDemo && (
+              <a href={item.liveDemo} className="button">
+                {content.portfolio.liveDemo.linkText}
+              </a>
             )}
-          </h3>
-          <p>{content.portfolio.item.techStack}</p>
-        </div>
-        {content.portfolio.item.liveDemo && (
-          <a href={content.portfolio.item.liveDemo} className="button">
-            Live Demo
-          </a>
-        )}
-        {content.portfolio.item.githubLink && <GithubCorner />}
-      </div>
-    </StyledPortfolioItem>
+            {item.githubLink && <GithubCorner />}
+          </div>
+        </StyledPortfolioItem>
+      ))}
+    </Fragment>
   );
 }
 

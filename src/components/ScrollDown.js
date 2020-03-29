@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
+import { Context } from '../Context';
+
 export default function ScrollDown() {
+  const { content } = useContext(Context);
+
   return (
     <StyledScrollDown href="#portfolio">
-      <span>SCROLL DOWN</span>
+      <span>{content.header.scrollDown}</span>
       <span />
     </StyledScrollDown>
   );

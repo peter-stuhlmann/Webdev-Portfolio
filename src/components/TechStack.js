@@ -1,79 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
+import { Context } from '../Context';
+
 export default function TechStack() {
+  const { content } = useContext(Context);
+
   return (
     <section id="techstack">
       <div className="wrap">
         <article>
-          <h2>Tech stack</h2>
-          <p className="description">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-          </p>
+          <h2>{content.techStack.heading}</h2>
+          <p className="description">{content.techStack.description}</p>
           <StyledTechStack>
-            <li>
-              <img
-                src={require('../assets/img/wordpress.png')}
-                alt="Wordpress"
-              />
-            </li>
-            <li>
-              <img src={require('../assets/img/html.png')} alt="HTML5" />
-            </li>
-            <li>
-              <img src={require('../assets/img/css.png')} alt="CSS3" />
-            </li>
-            <li>
-              <img src={require('../assets/img/sass.png')} alt="SCSS" />
-            </li>
-            <li>
-              <img
-                src={require('../assets/img/javascript.png')}
-                alt="Javascript"
-              />
-            </li>
-            <li>
-              <img src={require('../assets/img/react.png')} alt="React" />
-            </li>
-            <li>
-              <img src={require('../assets/img/git.png')} alt="Git" />
-            </li>
-            <li>
-              <img src={require('../assets/img/github.png')} alt="Github" />
-            </li>
-            <li>
-              <img
-                src={require('../assets/img/react-native.png')}
-                alt="React Native"
-              />
-            </li>
-            <li>
-              <img src={require('../assets/img/php.png')} alt="PHP" />
-            </li>
-            <li>
-              <img src={require('../assets/img/bash.png')} alt="Bash" />
-            </li>
-            <li>
-              <img
-                src={require('../assets/img/styled-components.png')}
-                alt="styled components"
-              />
-            </li>
-            <li>
-              <img src={require('../assets/img/latex.png')} alt="LaTex" />
-            </li>
-            <li>
-              <img
-                src={require('../assets/img/photoshop.png')}
-                alt="Photoshop"
-              />
-            </li>
-            <li>
-              <img
-                src={require('../assets/img/lightroom.png')}
-                alt="Lightroom"
-              />
-            </li>
+            {content.techStack.icons.map(icon => (
+              <li key={icon.src}>
+                <img src={icon.src} alt={icon.alt} />
+              </li>
+            ))}
           </StyledTechStack>
         </article>
         <hr />

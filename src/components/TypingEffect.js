@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 
+import { Context } from '../Context';
+
 export default function TypingEffect() {
-  return <StyledTypingEffect>Hi, ich bin Peter.</StyledTypingEffect>;
+  const { content } = useContext(Context);
+
+  return <StyledTypingEffect>{content.header.heading}</StyledTypingEffect>;
 }
 
 const animatedText = keyframes`

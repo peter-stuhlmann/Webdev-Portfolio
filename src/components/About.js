@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { Context } from '../Context';
+import { ButtonLink as Button } from './styled-components/Button';
 
 export default function About() {
+  const { content } = useContext(Context);
+
   return (
     <section id="about">
       <div className="wrap">
         <article>
-          <h2>Ich bin Webentwickler aus Berlin</h2>
-          <p className="description">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <h2>{content.about.heading}</h2>
+          <p className="description">{content.about.description}</p>
+          <p>{content.about.text}</p>
         </article>
+        <Button
+          linkText={content.about.cv.linkText}
+          href={content.about.cv.href}
+        />
         <hr />
       </div>
     </section>

@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Context } from '../Context';
+
 export default function Footer() {
+  const { content } = useContext(Context);
+  const currentYear = new Date().getFullYear();
+
   return (
     <StyledFooter>
       <p>
-        <Link to="/">&copy; Peter R. Stuhlmann</Link>, 2019
+        <Link to="/">&copy; {content.footer.copyright.owner}</Link>,{' '}
+        {content.footer.copyright.startYear} - {currentYear}
       </p>
       <nav>
-        <Link to="/impressum">Impressum</Link>
-        <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
+        {content.footer.nav.map(link => (
+          <Link
+            key={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            to={link.href}
+          >
+            {link.linkText}
+          </Link>
+        ))}
       </nav>
     </StyledFooter>
   );
