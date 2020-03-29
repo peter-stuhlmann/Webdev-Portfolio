@@ -7,7 +7,7 @@ export default function ScrollDown() {
   const { content } = useContext(Context);
 
   return (
-    <StyledScrollDown href="#portfolio">
+    <StyledScrollDown href="#about">
       <span>{content.header.scrollDown}</span>
       <span />
     </StyledScrollDown>
