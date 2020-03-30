@@ -14,38 +14,16 @@
       "headers": { "cache-control": "s-maxage=31536000,immutable" },
       "dest": "/static/$1"
     },
-    { "src": "/favicon.ico", "dest": "/favicon.ico" },
     {
-      "src": "/android-chrome-192x192.png",
-      "dest": "/android-chrome-192x192.png"
+      "src": "/img/(.*)",
+      "headers": { "cache-control": "s-maxage=604800" },
+      "dest": "/img/$1"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "dest": "/android-chrome-512x512.png"
+      "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=604800" },
+      "dest": "/$1"
     },
-    {
-      "src": "/apple-touch-icon.png",
-      "dest": "/apple-touch-icon.png"
-    },
-    {
-      "src": "/favicon-16x16.png",
-      "dest": "/favicon-16x16.png"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "dest": "/favicon-32x32.png"
-    },
-    {
-      "src": "/mstile-150x150.png",
-      "dest": "/mstile-150x150.png"
-    },
-    {
-      "src": "/safari-pinned-tabs.svg",
-      "dest": "/safari-pinned-tabs.svg"
-    },
-    { "src": "/browserconfig.xml", "dest": "/browserconfig.xml" },
-    { "src": "/robots.txt", "dest": "/robots.txt" },
-    { "src": "/manifest.json", "dest": "/manifest.json" },
     {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
