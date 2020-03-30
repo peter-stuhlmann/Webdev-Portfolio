@@ -1,8 +1,8 @@
-import React, { Suspense, useContext } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { Context } from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
+import Spinner from './components/Spinner';
 
 const Footer = React.lazy(() => import('./components/Footer'));
 const Home = React.lazy(() => import('./components/Home'));
@@ -15,11 +15,9 @@ const MainNavigation = React.lazy(() =>
 );
 
 export default function App() {
-  const { content } = useContext(Context);
-
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>{content.loading}</div>}>
+      <Suspense fallback={<Spinner />}>
         <MainNavigation />
         <ScrollToTop />
         <GlobalStyles />
