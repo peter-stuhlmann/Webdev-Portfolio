@@ -14,6 +14,7 @@ export default function ContactIcons() {
           target="_blank"
           rel="noopener noreferrer"
           href={icon.href}
+          aria-label={icon.serviceName}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox={icon.viewBox}>
             <path d={icon.path} />
@@ -41,6 +42,7 @@ const StyledContactIcons = styled.div`
       margin-bottom: 1px;
       opacity: 0;
       transition: transform 0.3s, opacity 0.2s;
+      text-shadow: 2px 2px 5px #000;
     }
 
     &::before {
