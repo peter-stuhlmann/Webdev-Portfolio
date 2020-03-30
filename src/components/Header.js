@@ -6,7 +6,7 @@ import TypingEffect from './TypingEffect';
 
 export default function Header() {
   return (
-    <StyledHeader>
+    <StyledHeader id="top">
       <TypingEffect />
       <ContactIcons />
       <ScrollDown />

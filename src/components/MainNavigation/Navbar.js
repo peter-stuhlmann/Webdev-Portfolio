@@ -70,7 +70,7 @@ const StyledNavbar = styled.nav`
     overflow-y: hidden;
     padding: 2px 0;
     position: static;
-    text-align: center;
+    text-align: right;
     transform: translateX(0);
     width: 100%;
   }

@@ -28,7 +28,7 @@ const StyledGlobalStyles = createGlobalStyle`
     .wrap {
       width: 100%;
       max-width: 1170px;
-      margin: 50px auto;
+      margin: 0 auto;
       padding: 15px;
       box-sizing: border-box;
     }
@@ -37,6 +37,7 @@ const StyledGlobalStyles = createGlobalStyle`
       text-align: center;
       text-transform: uppercase;
       font-size: 2em;
+      padding-top: 30px;
 
       @media (max-width: 500px) {
         font-size: 1.3em;

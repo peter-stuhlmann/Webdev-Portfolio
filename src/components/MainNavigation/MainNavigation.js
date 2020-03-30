@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
@@ -31,9 +31,12 @@ export default function MainNavigation() {
   return (
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
+      <div className="site-title-desktop">
+        <HashLink to="/#top">{content.siteTitle.desktop}</HashLink>
+      </div>
       <Navbar open={open} setOpen={setOpen} />
       <div className="site-title-mobile">
-        <Link to="/">{content.siteTitle}</Link>
+        <HashLink to="/#top">{content.siteTitle.mobile}</HashLink>
       </div>
     </StyledMainNavigation>
   );
@@ -50,6 +53,21 @@ const StyledMainNavigation = styled.div`
   a {
     font-weight: bold;
     letter-spacing: 1.5px;
+  }
+
+  .site-title-desktop {
+    margin-left: 15px;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    a {
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+    }
   }
 
   .site-title-mobile {
