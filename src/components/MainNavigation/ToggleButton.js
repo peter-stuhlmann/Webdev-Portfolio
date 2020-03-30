@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-const ToggleButton = ({ open, setOpen }) => (
-  <StyledToggleButton open={open} onClick={() => setOpen(!open)}>
-    <div />
-    <div />
-    <div />
-  </StyledToggleButton>
-);
+import { Context } from '../../Context';
+
+function ToggleButton({ open, setOpen }) {
+  const { content } = useContext(Context);
+
+  return (
+    <StyledToggleButton
+      open={open}
+      onClick={() => setOpen(!open)}
+      aria-label={content.header.toggleButton}
+    >
+      <div />
+      <div />
+      <div />
+    </StyledToggleButton>
+  );
+}
 
 export default ToggleButton;
 
