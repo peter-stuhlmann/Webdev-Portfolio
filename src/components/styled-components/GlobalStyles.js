@@ -37,6 +37,10 @@ const StyledGlobalStyles = createGlobalStyle`
       text-align: center;
       text-transform: uppercase;
       font-size: 2em;
+
+      @media (max-width: 500px) {
+        font-size: 1.3em;
+      }
     }
 
     article {

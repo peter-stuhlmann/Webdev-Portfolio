@@ -7,10 +7,12 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import NotFound from './components/NotFound';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import ScrollToTop from './components/ScrollToTop';
+import MainNavigation from './components/MainNavigation/MainNavigation';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <MainNavigation />
       <ScrollToTop />
       <GlobalStyles />
       <Switch>
