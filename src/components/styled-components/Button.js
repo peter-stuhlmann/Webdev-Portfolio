@@ -20,14 +20,16 @@ export const ButtonLink = props => {
 const StyledButtonLink = styled.a`
   background-color: #24292e;
   border-radius: 5px;
+  box-sizing: border-box;
   color: #fff;
   display: block;
   margin: 0 auto;
+  max-width: ${props => props.maxWidth || '300px'};
   padding: 7px 15px;
   text-align: center;
   text-decoration: none;
   transition: 0.2s;
-  width: ${props => props.width || '300px'};
+  width: ${props => props.width || '100%'};
 
   &:hover {
     color: grey;
