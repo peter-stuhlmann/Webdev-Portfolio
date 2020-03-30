@@ -45,6 +45,7 @@ export default function MainNavigation() {
 const StyledMainNavigation = styled.div`
   background-color: #24292e;
   display: flex;
+  height: 28px;
   padding: 15px;
   position: sticky;
   top: 0;

@@ -29,5 +29,5 @@ const StyledHeader = styled.header`
   background-size: cover;
   background-blend-mode: overlay;
   box-shadow: inset 0px -12px 10px -10px rgba(0, 0, 0, 0.4);
-  margin-top: -60px;
+  margin-top: -58px;
 `;
