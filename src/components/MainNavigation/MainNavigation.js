@@ -48,7 +48,7 @@ const StyledMainNavigation = styled.div`
   padding: 15px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 
   a {
     font-weight: bold;
