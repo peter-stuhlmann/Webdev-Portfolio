@@ -16,12 +16,7 @@ export default function Footer() {
       </p>
       <nav>
         {content.footer.nav.map(link => (
-          <Link
-            key={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            to={link.href}
-          >
+          <Link key={link.href} to={link.href}>
             {link.linkText}
           </Link>
         ))}
