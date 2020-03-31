@@ -1,18 +1,15 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import Spinner from './components/Spinner';
+import Router from './components/Router';
 
-const Footer = React.lazy(() => import('./components/Footer'));
-const Home = React.lazy(() => import('./components/Home'));
-const LegalNotice = React.lazy(() => import('./components/LegalNotice'));
-const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
-const NotFound = React.lazy(() => import('./components/NotFound'));
-const ScrollToTop = React.lazy(() => import('./components/ScrollToTop'));
-const MainNavigation = React.lazy(() =>
+const ScrollToTop = lazy(() => import('./components/ScrollToTop'));
+const MainNavigation = lazy(() =>
   import('./components/MainNavigation/MainNavigation')
 );
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
@@ -21,12 +18,7 @@ export default function App() {
         <MainNavigation />
         <ScrollToTop />
         <GlobalStyles />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/impressum" component={LegalNotice} />
-          <Route path="/datenschutzerklaerung" component={PrivacyPolicy} />
-          <Route component={NotFound} />
-        </Switch>
+        <Router />
         <Footer />
       </Suspense>
     </BrowserRouter>
