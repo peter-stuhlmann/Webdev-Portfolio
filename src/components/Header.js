@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <StyledHeader id="top">
       <TypingEffect />
-      <ContactIcons />
+      <ContactIcons header />
       <ScrollDown />
     </StyledHeader>
   );
@@ -22,7 +22,7 @@ const StyledHeader = styled.header`
   position: relative;
   overflow: hidden;
   background-image: url('img/peter-stuhlmann.jpg');
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #454545;
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
@@ -30,4 +30,8 @@ const StyledHeader = styled.header`
   background-blend-mode: overlay;
   box-shadow: inset 0px -12px 10px -10px rgba(0, 0, 0, 0.4);
   margin-top: -58px;
+
+  @media (max-width: 767px) {
+    background-attachment: initial;
+  }
 `;

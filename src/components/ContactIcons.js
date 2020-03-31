@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import { Context } from '../Context';
 
-export default function ContactIcons() {
+export default function ContactIcons(props) {
   const { content } = useContext(Context);
 
   return (
-    <StyledContactIcons>
+    <StyledContactIcons header={props.header}>
       {content.contact.icons.map(icon => (
         <a
           key={icon.href}
@@ -26,27 +26,24 @@ export default function ContactIcons() {
 }
 
 const StyledContactIcons = styled.div`
-  position: absolute;
-  left: 30px;
+  position: ${props => (props.header ? 'absolute' : 'static')};
+  left: ${props => (props.header ? '30px' : null)};
+  text-align: center;
 
   @media (max-width: 768px) {
     top: 80%;
   }
 
-  @media (min-width: 1300px) {
-    position: fixed;
-  }
-
   a {
-    display: block;
+    display: ${props => (props.header ? 'block' : 'inline-block')};
     padding: 10px 0px;
     text-decoration: none;
-    color: #a7a7a7;
+    color: ${props => (props.header ? '#fff' : '#a7a7a7')};
     z-index: 1000;
 
     @media (max-width: 768px) {
       display: inline-block;
-      margin-right: 25px;
+      margin: 12px;
     }
 
     &::before,
@@ -65,7 +62,7 @@ const StyledContactIcons = styled.div`
     &::before {
       margin-right: 6px;
       content: '{';
-      font-size: 28px;
+      font-size: ${props => (props.header ? '28px' : '44px')};
       transform: translateX(10px);
       z-index: -1;
     }
@@ -73,7 +70,7 @@ const StyledContactIcons = styled.div`
     &::after {
       margin-left: 6px;
       content: '}';
-      font-size: 28px;
+      font-size: ${props => (props.header ? '28px' : '44px')};
       transform: translateX(-10px);
       z-index: -1;
     }
@@ -85,8 +82,8 @@ const StyledContactIcons = styled.div`
     }
 
     svg {
-      width: 20px;
-      fill: #a7a7a7;
+      width: ${props => (props.header ? '20px' : '30px')};
+      fill: ${props => (props.header ? '#fff' : '#a7a7a7')};
 
       @media (max-width: 768px) {
         width: 30px;
