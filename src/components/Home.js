@@ -4,6 +4,7 @@ import Header from './Header';
 import About from './About';
 import TechStack from './TechStack';
 import Portfolio from './Portfolio';
+import Contact from './Contact';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <TechStack />
       <Portfolio />
+      <Contact />
     </Fragment>
   );
 }
