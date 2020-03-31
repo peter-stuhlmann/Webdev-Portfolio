@@ -29,6 +29,14 @@ const StyledContactIcons = styled.div`
   position: absolute;
   left: 30px;
 
+  @media (max-width: 768px) {
+    top: 80%;
+  }
+
+  @media (min-width: 1300px) {
+    position: fixed;
+  }
+
   a {
     display: block;
     padding: 10px 0px;
@@ -36,13 +44,22 @@ const StyledContactIcons = styled.div`
     color: #a7a7a7;
     z-index: 1000;
 
+    @media (max-width: 768px) {
+      display: inline-block;
+      margin-right: 25px;
+    }
+
     &::before,
     &::after {
       display: inline-block;
       margin-bottom: 1px;
       opacity: 0;
       transition: transform 0.3s, opacity 0.2s;
-      text-shadow: 2px 2px 5px #000;
+      text-shadow: 2px 2px 1px #000;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     &::before {
@@ -70,6 +87,10 @@ const StyledContactIcons = styled.div`
     svg {
       width: 20px;
       fill: #a7a7a7;
+
+      @media (max-width: 768px) {
+        width: 30px;
+      }
     }
   }
 `;

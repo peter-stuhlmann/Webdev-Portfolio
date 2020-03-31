@@ -26,10 +26,11 @@ export default function TypingEffect() {
 
 const TypingEffectStyles = createGlobalStyle`
   .typing-effect {
+    color: #fff;
     font-family: 'WebDevFont SourceCode', monospace;
     font-size: 50px;
-    color: #fff;
-    margin: 0 auto;
+    margin: 0 40px 0 40px;
+    text-align: center;
 
     @media (max-width: 1250px) {
       font-size: 30px;
