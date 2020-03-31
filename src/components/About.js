@@ -17,8 +17,12 @@ export default function About() {
         <Button
           linkText={content.about.cv.linkText}
           href={content.about.cv.href}
+          style={{
+            right: '50%',
+            transform: 'translate(50%)',
+          }}
         />
-        <hr />
+        <hr style={{ marginTop: '120px' }} />
       </div>
     </section>
   );
