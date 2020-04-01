@@ -30,6 +30,8 @@ const StyledScrollDown = styled.a`
       margin: 0;
       color: #a7a7a7;
       font-size: 11px;
+      transition: all 0.5s;
+
       writing-mode: vertical-rl;
     }
 
@@ -47,5 +49,10 @@ const StyledScrollDown = styled.a`
 
   &:hover {
     bottom: -25px;
+    height: 215px;
+
+    span:first-child {
+      margin: 25px 0 0 0;
+    }
   }
 `;
