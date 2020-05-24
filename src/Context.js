@@ -6,7 +6,22 @@ import { useLocalStorage } from './helpers/useLocalStorage';
 export const Context = React.createContext(null);
 
 export default function ContextProvider({ children }) {
-  const [language, setLanguage] = useLocalStorage('Language', 'german');
+  // Detect browser language
+  let browserLanguage = navigator.language;
+  switch (browserLanguage) {
+    case 'de':
+    case 'de-at':
+    case 'de-ch':
+    case 'de-de':
+    case 'de-li':
+    case 'de-lu':
+      browserLanguage = 'german';
+      break;
+    default:
+      browserLanguage = 'english';
+  }
+
+  const [language, setLanguage] = useLocalStorage('Language', browserLanguage);
   const [languageButton, setLanguageButton] = useState(
     language === 'german' ? 'EN' : 'DE'
   );
