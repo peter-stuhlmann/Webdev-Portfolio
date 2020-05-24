@@ -5,7 +5,7 @@ import { Context } from '../Context';
 import ContactIcons from './ContactIcons';
 
 export default function Contact() {
-  const { content } = useContext(Context);
+  const { content, language } = useContext(Context);
   const [contact, inView] = useInView();
   const [opacity, setOpacity] = useState('0');
 
@@ -17,7 +17,7 @@ export default function Contact() {
 
   return (
     <section
-      id="contact"
+      id={language === 'german' ? 'kontakt' : 'contact'}
       style={{
         transition: '.5s',
         transitionDelay: '.2s',

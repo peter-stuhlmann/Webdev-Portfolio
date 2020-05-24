@@ -5,7 +5,7 @@ import { Context } from '../Context';
 import { ButtonLink as Button } from './styled-components/Button';
 
 export default function About() {
-  const { content } = useContext(Context);
+  const { content, language } = useContext(Context);
   const [about, inView] = useInView();
   const [opacity, setOpacity] = useState('0');
 
@@ -17,7 +17,7 @@ export default function About() {
 
   return (
     <section
-      id="about"
+      id={language === 'german' ? 'ueber-mich' : 'about'}
       style={{
         transition: '.5s',
         transitionDelay: '.2s',
