@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Typist from 'react-typist';
 
@@ -7,19 +7,23 @@ import { Context } from '../Context';
 export default function TypingEffect() {
   const { content } = useContext(Context);
 
+  const TypedHeading = () => (
+    <Typist className="typing-effect">
+      {content.header.heading.pre} {content.header.heading.word[0]}
+      <Typist.Delay ms={1500} />
+      <Typist.Backspace
+        count={content.header.heading.word[0].length}
+        delay={1000}
+      />
+      <Typist.Delay ms={750} />
+      {content.header.heading.word[1]}
+    </Typist>
+  );
+
   return (
     <Fragment>
       <TypingEffectStyles />
-      <Typist className="typing-effect">
-        {content.header.heading.pre} {content.header.heading.word[0]}
-        <Typist.Delay ms={1500} />
-        <Typist.Backspace
-          count={content.header.heading.word[0].length}
-          delay={1000}
-        />
-        <Typist.Delay ms={750} />
-        {content.header.heading.word[1]}
-      </Typist>
+      <TypedHeading />
     </Fragment>
   );
 }
