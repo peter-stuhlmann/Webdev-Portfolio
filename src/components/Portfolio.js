@@ -18,6 +18,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
+      ref={portfolio}
       style={{
         transition: '.5s',
         transitionDelay: '.2s',
@@ -25,12 +26,15 @@ export default function Portfolio() {
       }}
     >
       <div className="wrap">
-        <article ref={portfolio}>
+        <article>
           <h2>{content.portfolio.heading}</h2>
           <p className="description">{content.portfolio.description}</p>
         </article>
       </div>
-      <PortfolioItem />
+
+      {content.portfolio.items.map(item => (
+        <PortfolioItem item={item} key={item.number} />
+      ))}
     </section>
   );
 }

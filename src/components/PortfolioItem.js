@@ -1,41 +1,60 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import GithubCorner from './GithubCorner';
 import { ButtonLink } from './styled-components/Button';
 
-export default function PortfolioItem() {
+export default function PortfolioItem(props) {
   const { content } = useContext(Context);
+  const [portfolioItem, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  });
+
+  const {
+    number,
+    title,
+    description,
+    techStack,
+    liveDemo,
+    githubLink,
+  } = props.item;
 
   return (
-    <Fragment>
-      {content.portfolio.items.map(item => (
-        <StyledPortfolioItem key={item.number}>
-          <div className="overlay" />
-          <div className="content">
-            <div className="number">
-              <span>{item.number}</span>
-            </div>
-            <div className="text">
-              <h3>{item.title}</h3>
-              {item.description && (
-                <p className="description">({item.description})</p>
-              )}
-              {item.techStack && <p className="techstack">{item.techStack}</p>}
-            </div>
-            {item.liveDemo && (
-              <ButtonLink
-                href={item.liveDemo}
-                linkText={content.portfolio.liveDemo.linkText}
-                className="button"
-              />
-            )}
-            {item.githubLink && <GithubCorner />}
-          </div>
-        </StyledPortfolioItem>
-      ))}
-    </Fragment>
+    <StyledPortfolioItem
+      ref={portfolioItem}
+      style={{
+        transition: '.5s',
+        transitionDelay: '.2s',
+        opacity: opacity,
+      }}
+    >
+      <div className="overlay" />
+      <div className="content">
+        <div className="number">
+          <span>{number}</span>
+        </div>
+        <div className="text">
+          <h3>{title}</h3>
+          {description && <p className="description">({description})</p>}
+          {techStack && <p className="techstack">{techStack}</p>}
+        </div>
+        {liveDemo && (
+          <ButtonLink
+            href={liveDemo}
+            linkText={content.portfolio.liveDemo.linkText}
+            className="button"
+          />
+        )}
+        {githubLink && <GithubCorner />}
+      </div>
+    </StyledPortfolioItem>
   );
 }
 
