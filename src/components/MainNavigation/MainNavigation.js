@@ -60,7 +60,7 @@ const StyledMainNavigation = styled.div`
     margin-left: 15px;
     white-space: nowrap;
 
-    @media (max-width: 767px) {
+    @media (max-width: 849px) {
       display: none;
     }
 
@@ -76,7 +76,7 @@ const StyledMainNavigation = styled.div`
     text-align: center;
     width: 100%;
 
-    @media (min-width: 768px) {
+    @media (min-width: 850px) {
       display: none;
     }
 

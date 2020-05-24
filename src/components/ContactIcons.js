@@ -30,7 +30,7 @@ const StyledContactIcons = styled.div`
   left: ${props => (props.header ? '30px' : null)};
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     top: 80%;
   }
 
@@ -41,7 +41,7 @@ const StyledContactIcons = styled.div`
     color: ${props => (props.header ? '#fff' : '#a7a7a7')};
     z-index: 1000;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       display: inline-block;
       margin: 12px;
     }
@@ -54,7 +54,7 @@ const StyledContactIcons = styled.div`
       transition: transform 0.3s, opacity 0.2s;
       text-shadow: 2px 2px 1px #000;
 
-      @media (max-width: 768px) {
+      @media (max-width: 850px) {
         display: none;
       }
     }
@@ -85,7 +85,7 @@ const StyledContactIcons = styled.div`
       width: ${props => (props.header ? '20px' : '30px')};
       fill: ${props => (props.header ? '#fff' : '#a7a7a7')};
 
-      @media (max-width: 768px) {
+      @media (max-width: 850px) {
         width: 30px;
       }
     }

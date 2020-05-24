@@ -57,7 +57,7 @@ const StyledNavbar = styled.nav`
     text-decoration: none;
     transition: 0.2s;
 
-    @media (min-width: 768px) {
+    @media (min-width: 850px) {
       &:hover {
         color: #b0b0b0;
       }
@@ -68,7 +68,7 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 850px) {
     box-shadow: none;
     display: block;
     height: 30px;
@@ -83,8 +83,16 @@ const StyledNavbar = styled.nav`
   }
 
   img {
-    vertical-align: middle;
+    cursor: pointer;
     height: 15px;
     margin-left: 20px;
+    vertical-align: middle;
+
+    @media (max-width: 849px) {
+      height: 21px;
+      margin-left: 0;
+      padding: 12px;
+      width: 36px;
+    }
   }
 `;
