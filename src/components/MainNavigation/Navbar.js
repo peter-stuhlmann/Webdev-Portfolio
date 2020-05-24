@@ -6,13 +6,18 @@ import English from '../../assets/img/en.png';
 import { Context } from '../../Context';
 import styled from 'styled-components';
 
-function Navbar({ open }) {
+function Navbar({ open, setOpen }) {
   const { content, changeLanguage, languageButton } = useContext(Context);
 
   return (
     <StyledNavbar open={open}>
       {content.header.navigation.map(links => (
-        <HashLink smooth key={links.href} to={links.href}>
+        <HashLink
+          smooth
+          key={links.href}
+          to={links.href}
+          onClick={() => setOpen(false)}
+        >
           {links.linkText}
         </HashLink>
       ))}
