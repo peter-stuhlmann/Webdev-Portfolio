@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import German from '../../assets/img/de.png';
+import English from '../../assets/img/en.png';
 
 import { Context } from '../../Context';
 import styled from 'styled-components';
 
 function Navbar({ open }) {
-  const { content } = useContext(Context);
+  const { content, changeLanguage, languageButton } = useContext(Context);
 
   return (
     <StyledNavbar open={open}>
@@ -14,6 +16,11 @@ function Navbar({ open }) {
           {links.linkText}
         </HashLink>
       ))}
+      <img
+        src={languageButton === 'EN' ? English : German}
+        onClick={() => changeLanguage()}
+        alt={languageButton}
+      />
     </StyledNavbar>
   );
 }
@@ -73,5 +80,11 @@ const StyledNavbar = styled.nav`
     text-align: right;
     transform: translateX(0);
     width: 100%;
+  }
+
+  img {
+    vertical-align: middle;
+    height: 15px;
+    margin-left: 20px;
   }
 `;
