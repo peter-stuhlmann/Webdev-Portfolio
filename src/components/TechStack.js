@@ -31,7 +31,7 @@ export default function TechStack() {
           <StyledTechStack>
             {content.techStack.icons.map(icon => (
               <li key={icon.src}>
-                <img src={icon.src} alt={icon.alt} />
+                <img src={icon.src} alt={icon.alt} loading="lazy" />
               </li>
             ))}
           </StyledTechStack>
