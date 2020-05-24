@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { content as Translations } from './data/Content';
+import { icons } from './data/Icons';
 import { useLocalStorage } from './helpers/useLocalStorage';
 
 export const Context = React.createContext(null);
@@ -39,6 +40,7 @@ export default function ContextProvider({ children }) {
     <Context.Provider
       value={{
         content,
+        icons,
         language,
         setLanguage,
         languageButton,

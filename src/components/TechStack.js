@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Context } from '../Context';
 
 export default function TechStack() {
-  const { content } = useContext(Context);
+  const { content, icons } = useContext(Context);
   const [techstack, inView] = useInView();
   const [opacity, setOpacity] = useState('0');
 
@@ -29,7 +29,7 @@ export default function TechStack() {
           <h2>{content.techStack.heading}</h2>
           <p className="description">{content.techStack.description}</p>
           <StyledTechStack>
-            {content.techStack.icons.map(icon => (
+            {icons.techStack.map(icon => (
               <li key={icon.src}>
                 <img src={icon.src} alt={icon.alt} loading="lazy" />
               </li>

@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { Context } from '../Context';
 
 export default function ContactIcons(props) {
-  const { content } = useContext(Context);
+  const { icons } = useContext(Context);
 
   return (
     <StyledContactIcons header={props.header}>
-      {content.contact.icons.map(icon => (
+      {icons.contact.map(icon => (
         <a
           key={icon.href}
           target="_blank"
