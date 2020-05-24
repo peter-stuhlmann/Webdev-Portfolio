@@ -1,15 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 
 export default function TechStack() {
   const { content } = useContext(Context);
+  const [techstack, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  });
 
   return (
-    <section id="techstack">
+    <section
+      id="techstack"
+      style={{
+        transition: '.5s',
+        transitionDelay: '.2s',
+        opacity: opacity,
+      }}
+    >
       <div className="wrap">
-        <article>
+        <article ref={techstack}>
           <h2>{content.techStack.heading}</h2>
           <p className="description">{content.techStack.description}</p>
           <StyledTechStack>

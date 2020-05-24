@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { content } from './data/Content';
 
 export const Context = React.createContext(null);
