@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
 import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
@@ -28,6 +28,22 @@ export default function MainNavigation() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
+  const Backdrop = createGlobalStyle`
+    body::after {
+      content: '';
+      transition: transform 0.3s ease-in-out;
+      transform: ${open ? 'translateX(0)' : 'translateX(calc(-100%))'};
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  `;
+
   return (
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
@@ -38,6 +54,7 @@ export default function MainNavigation() {
       <div className="site-title-mobile">
         <HashLink to="/#top">{content.siteTitle.mobile}</HashLink>
       </div>
+      <Backdrop />
     </StyledMainNavigation>
   );
 }
@@ -58,9 +75,10 @@ const StyledMainNavigation = styled.div`
 
   .site-title-desktop {
     margin-left: 15px;
+    padding: 2px 0;
     white-space: nowrap;
 
-    @media (max-width: 849px) {
+    @media (max-width: 869px) {
       display: none;
     }
 
@@ -76,7 +94,7 @@ const StyledMainNavigation = styled.div`
     text-align: center;
     width: 100%;
 
-    @media (min-width: 850px) {
+    @media (min-width: 870px) {
       display: none;
     }
 
