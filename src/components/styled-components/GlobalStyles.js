@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import RalewayRegular from '../../assets/fonts/raleway/Raleway-Regular.ttf';
 import SourceCodeProRegular from '../../assets/fonts/source-code-pro/SourceCodePro-Regular.ttf';
 
-const StyledGlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'WebDevFont Regular';
     src: url(${RalewayRegular});
@@ -67,4 +67,3 @@ const StyledGlobalStyles = createGlobalStyle`
     }
   }
 `;
-export const GlobalStyles = () => <StyledGlobalStyles />;
