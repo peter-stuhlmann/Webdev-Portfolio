@@ -68,7 +68,7 @@ const StyledNavbar = styled.nav`
       }
     }
 
-    @media (max-width: 849px) {
+    @media (max-width: 869px) {
       font-size: 20px;
     }
 
@@ -77,7 +77,7 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: 870px) {
     box-shadow: none;
     display: block;
     height: 30px;
@@ -97,7 +97,7 @@ const StyledNavbar = styled.nav`
     margin-left: 12px;
     vertical-align: middle;
 
-    @media (max-width: 849px) {
+    @media (max-width: 869px) {
       height: 21px;
       margin-left: 0;
       padding: 12px;

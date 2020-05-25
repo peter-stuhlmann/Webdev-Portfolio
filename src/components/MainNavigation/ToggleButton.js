@@ -60,7 +60,7 @@ const StyledToggleButton = styled.button`
     }
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: 870px) {
     display: none;
   }
 `;
