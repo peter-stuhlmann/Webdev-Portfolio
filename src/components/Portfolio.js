@@ -32,8 +32,8 @@ export default function Portfolio() {
         </article>
       </div>
 
-      {content.portfolio.items.map(item => (
-        <PortfolioItem item={item} key={item.number} />
+      {content.portfolio.items.map((item, index) => (
+        <PortfolioItem key={item.title} item={item} number={index} />
       ))}
     </section>
   );

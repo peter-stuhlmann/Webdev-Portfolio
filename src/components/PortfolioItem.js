@@ -17,14 +17,7 @@ export default function PortfolioItem(props) {
     }
   });
 
-  const {
-    number,
-    title,
-    description,
-    techStack,
-    liveDemo,
-    githubLink,
-  } = props.item;
+  const { title, description, techStack, liveDemo, githubLink } = props.item;
 
   return (
     <StyledPortfolioItem
@@ -38,7 +31,7 @@ export default function PortfolioItem(props) {
       <div className="overlay" />
       <div className="content">
         <div className="number">
-          <span>{number}</span>
+          <span>{props.number + 1}</span>
         </div>
         <div className="text">
           <h3>{title}</h3>
