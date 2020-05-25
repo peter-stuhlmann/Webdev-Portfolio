@@ -57,7 +57,7 @@ const StyledNavbar = styled.nav`
 
   a {
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     padding: 7px 12px;
     text-decoration: none;
     transition: 0.2s;
@@ -66,6 +66,10 @@ const StyledNavbar = styled.nav`
       &:hover {
         color: #b0b0b0;
       }
+    }
+
+    @media (max-width: 849px) {
+      font-size: 20px;
     }
 
     &:first-child {
@@ -90,7 +94,7 @@ const StyledNavbar = styled.nav`
   img {
     cursor: pointer;
     height: 15px;
-    margin-left: 20px;
+    margin-left: 12px;
     vertical-align: middle;
 
     @media (max-width: 849px) {
