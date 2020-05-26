@@ -1,10 +1,17 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
+import { WebP } from '../helpers/DetectBrowserSupport';
 
 import { Context } from '../Context';
 import GithubCorner from './GithubCorner';
 import { ButtonLink } from './styled-components/Button';
+
+// Import background images
+import MobileWebP from '../assets/img/portfolio-item-background-mobile.webp';
+import MobileJpeg from '../assets/img/portfolio-item-background-mobile.jpg';
+import DesktopWebP from '../assets/img/portfolio-item-background.webp';
+import DesktopJpeg from '../assets/img/portfolio-item-background.jpg';
 
 export default function PortfolioItem(props) {
   const { content } = useContext(Context);
@@ -51,6 +58,27 @@ export default function PortfolioItem(props) {
   );
 }
 
+let backgroundImage;
+switch (true) {
+  case WebP() && window.screen.width < 769:
+    console.log('mobile, WebP is supported');
+    backgroundImage = MobileWebP;
+    break;
+  case WebP() && window.screen.width > 768:
+    console.log('desktop, WebP is supported');
+    backgroundImage = DesktopWebP;
+    break;
+  case !WebP() && window.screen.width < 769:
+    console.log('mobile, WebP is not supported');
+    backgroundImage = MobileJpeg;
+    break;
+  case !WebP() && window.screen.width > 768:
+    console.log('desktop, WebP is not supported');
+    backgroundImage = DesktopJpeg;
+    break;
+  default:
+}
+
 const StyledPortfolioItem = styled.section`
   position: relative;
   z-index: 2;
@@ -59,7 +87,7 @@ const StyledPortfolioItem = styled.section`
   border-bottom: 1px solid #1e2738;
   background-position: center;
   background-size: cover;
-  background-image: url('img/portfolio-item-background.jpg');
+  background-image: url(${backgroundImage});
 
   .overlay {
     position: absolute;
