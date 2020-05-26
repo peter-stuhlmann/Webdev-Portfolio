@@ -8,10 +8,10 @@ export default function GithubCorner() {
 
   return (
     <Fragment>
-      {content.portfolio.items.map(item => (
+      {content.portfolio.items.map((item, index) => (
         <Octocat
           href={item.githubLink}
-          key={item.number}
+          key={index}
           aria-label={content.portfolio.octocat.ariaLabel}
         >
           <svg width="80" height="80" viewBox="0 0 250 250">
