@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { Context } from '../Context';
 
 export default function ScrollDown() {
-  const { content } = useContext(Context);
+  const { content, language } = useContext(Context);
 
   return (
-    <StyledScrollDown href="#about">
+    <StyledScrollDown href={language === 'german' ? '#ueber-mich' : '#about'}>
       <span>{content.header.scrollDown}</span>
       <span />
     </StyledScrollDown>
