@@ -19,11 +19,12 @@ export const ButtonLink = props => {
 };
 
 const StyledButtonLink = styled.a`
+  color: #000;
   position: absolute;
   padding: 5px 8px;
+  text-align: center;
   transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   text-decoration: none;
-  color: #000;
 
   &:before {
     position: absolute;
