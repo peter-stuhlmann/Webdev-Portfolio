@@ -8,10 +8,17 @@ import GithubCorner from './GithubCorner';
 import { ButtonLink } from './styled-components/Button';
 
 // Import background images
-import MobileWebP from '../assets/img/portfolio-item-background-mobile.webp';
-import MobileJpeg from '../assets/img/portfolio-item-background-mobile.jpg';
-import DesktopWebP from '../assets/img/portfolio-item-background.webp';
-import DesktopJpeg from '../assets/img/portfolio-item-background.jpg';
+// import MobileWebP from '../assets/img/portfolio-item-background-mobile.webp';
+// import MobileJpeg from '../assets/img/portfolio-item-background-mobile.jpg';
+// import DesktopWebP from '../assets/img/portfolio-item-background.webp';
+// import DesktopJpeg from '../assets/img/portfolio-item-background.jpg';
+
+// Dummy content!
+// You should replace it with images with different formats and resolutions like in the example above
+const MobileWebP = 'https://loremflickr.com/1920/1080/code';
+const MobileJpeg = 'https://loremflickr.com/1920/1080/code';
+const DesktopWebP = 'https://loremflickr.com/1920/1080/code';
+const DesktopJpeg = 'https://loremflickr.com/1920/1080/code';
 
 export default function PortfolioItem(props) {
   const { content } = useContext(Context);
