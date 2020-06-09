@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import ContextProvider from './Context';
 import App from './App';
 
 ReactDOM.render(
-  <ContextProvider>
+  <StrictMode>
     <App />
-  </ContextProvider>,
+  </StrictMode>,
   document.querySelector('#root')
 );
