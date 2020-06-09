@@ -61,19 +61,15 @@ export default function PortfolioItem(props) {
 let backgroundImage;
 switch (true) {
   case WebP() && window.screen.width < 769:
-    console.log('mobile, WebP is supported');
     backgroundImage = MobileWebP;
     break;
   case WebP() && window.screen.width > 768:
-    console.log('desktop, WebP is supported');
     backgroundImage = DesktopWebP;
     break;
   case !WebP() && window.screen.width < 769:
-    console.log('mobile, WebP is not supported');
     backgroundImage = MobileJpeg;
     break;
   case !WebP() && window.screen.width > 768:
-    console.log('desktop, WebP is not supported');
     backgroundImage = DesktopJpeg;
     break;
   default:
@@ -100,7 +96,7 @@ const StyledPortfolioItem = styled.section`
     width: 0;
     height: 100%;
     overflow: hidden;
-    background-color: #1e273896;
+    background-color: rgba(30, 39, 56, 0.8);
   }
 
   &:hover .overlay {
