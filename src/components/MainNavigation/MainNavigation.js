@@ -28,22 +28,6 @@ export default function MainNavigation() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
-  const Backdrop = createGlobalStyle`
-    body::after {
-      content: '';
-      transition: transform 0.3s ease-in-out;
-      transform: ${open ? 'translateX(0)' : 'translateX(calc(-100%))'};
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-    }
-  `;
-
   return (
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
@@ -54,10 +38,28 @@ export default function MainNavigation() {
       <div className="site-title-mobile">
         <HashLink to="/#top">{content.siteTitle.mobile}</HashLink>
       </div>
-      <Backdrop />
+      <Backdrop open={open} />
     </StyledMainNavigation>
   );
 }
+
+const Backdrop = createGlobalStyle`
+  body::after {
+    content: '';
+    transition: opacity 0.3s ease-in-out;
+    opacity: ${props => (props.open ? '1' : '0')};
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+    transform: ${props =>
+      props.open ? 'translateX(0)' : 'translateX(calc(-100%))'};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+`;
 
 const StyledMainNavigation = styled.div`
   background-color: #24292e;
