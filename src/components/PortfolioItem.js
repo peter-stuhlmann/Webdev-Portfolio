@@ -7,19 +7,6 @@ import { Context } from '../Context';
 import GithubCorner from './GithubCorner';
 import { ButtonLink } from './styled-components/Button';
 
-// Import background images
-// import MobileWebP from '../assets/img/portfolio-item-background-mobile.webp';
-// import MobileJpeg from '../assets/img/portfolio-item-background-mobile.jpg';
-// import DesktopWebP from '../assets/img/portfolio-item-background.webp';
-// import DesktopJpeg from '../assets/img/portfolio-item-background.jpg';
-
-// Dummy content!
-// You should replace it with images with different formats and resolutions like in the example above
-const MobileWebP = 'https://loremflickr.com/1920/1080/code';
-const MobileJpeg = 'https://loremflickr.com/1920/1080/code';
-const DesktopWebP = 'https://loremflickr.com/1920/1080/code';
-const DesktopJpeg = 'https://loremflickr.com/1920/1080/code';
-
 export default function PortfolioItem(props) {
   const { content } = useContext(Context);
   const [portfolioItem, inView] = useInView();
@@ -33,6 +20,23 @@ export default function PortfolioItem(props) {
 
   const { title, description, techStack, liveDemo, githubLink } = props.item;
 
+  let backgroundImage;
+  switch (true) {
+    case WebP() && window.screen.width < 769:
+      backgroundImage = content.portfolio.background.mobile.webp;
+      break;
+    case WebP() && window.screen.width > 768:
+      backgroundImage = content.portfolio.background.desktop.webp;
+      break;
+    case !WebP() && window.screen.width < 769:
+      backgroundImage = content.portfolio.background.mobile.jpg;
+      break;
+    case !WebP() && window.screen.width > 768:
+      backgroundImage = content.portfolio.background.desktop.jpg;
+      break;
+    default:
+  }
+
   return (
     <StyledPortfolioItem
       ref={portfolioItem}
@@ -40,6 +44,7 @@ export default function PortfolioItem(props) {
         transition: '.5s',
         transitionDelay: '.2s',
         opacity: opacity,
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <div className="overlay" />
@@ -65,23 +70,6 @@ export default function PortfolioItem(props) {
   );
 }
 
-let backgroundImage;
-switch (true) {
-  case WebP() && window.screen.width < 769:
-    backgroundImage = MobileWebP;
-    break;
-  case WebP() && window.screen.width > 768:
-    backgroundImage = DesktopWebP;
-    break;
-  case !WebP() && window.screen.width < 769:
-    backgroundImage = MobileJpeg;
-    break;
-  case !WebP() && window.screen.width > 768:
-    backgroundImage = DesktopJpeg;
-    break;
-  default:
-}
-
 const StyledPortfolioItem = styled.section`
   position: relative;
   z-index: 2;
@@ -90,7 +78,6 @@ const StyledPortfolioItem = styled.section`
   border-bottom: 1px solid #1e2738;
   background-position: center;
   background-size: cover;
-  background-image: url(${backgroundImage});
 
   .overlay {
     position: absolute;
