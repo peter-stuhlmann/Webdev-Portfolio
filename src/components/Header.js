@@ -6,26 +6,23 @@ import ScrollDown from './ScrollDown';
 import TypingEffect from './TypingEffect';
 import { WebP } from '../helpers/DetectBrowserSupport';
 
-// Import background images
-// import MWebP from '../assets/img/peter-stuhlmann-m.webp';
-// import MJpeg from '../assets/img/peter-stuhlmann-m.jpg';
-// import LWebP from '../assets/img/peter-stuhlmann-l.webp';
-// import LJpeg from '../assets/img/peter-stuhlmann-l.jpg';
-// import XlWebP from '../assets/img/peter-stuhlmann-xl.webp';
-// import XlJpeg from '../assets/img/peter-stuhlmann-xl.jpg';
-// import XxlWebP from '../assets/img/peter-stuhlmann-xxl.webp';
-// import XxlJpeg from '../assets/img/peter-stuhlmann-xxl.jpg';
-
-// Dummy content!
-// You should replace it with images with different formats and resolutions like in the example above
-const MWebP = 'https://loremflickr.com/1920/1080/landscape';
-const MJpeg = 'https://loremflickr.com/1920/1080/landscape';
-const LWebP = 'https://loremflickr.com/1920/1080/landscape';
-const LJpeg = 'https://loremflickr.com/1920/1080/landscape';
-const XlWebP = 'https://loremflickr.com/1920/1080/landscape';
-const XlJpeg = 'https://loremflickr.com/1920/1080/landscape';
-const XxlWebP = 'https://loremflickr.com/1920/1080/landscape';
-const XxlJpeg = 'https://loremflickr.com/1920/1080/landscape';
+// background images for different screen sizes
+const MWebP =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-m.webp';
+const MJpeg =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-m.jpg';
+const LWebP =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-l.webp';
+const LJpeg =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-l.jpg';
+const XlWebP =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xl.webp';
+const XlJpeg =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xl.jpg';
+const XxlWebP =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xxl.webp';
+const XxlJpeg =
+  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xxl.jpg';
 
 export default function Header() {
   return (
