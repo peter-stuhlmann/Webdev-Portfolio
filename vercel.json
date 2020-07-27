@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "webdev-portfolio",
   "builds": [
     {
       "src": "package.json",
@@ -11,23 +10,13 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "headers": { "cache-control": "max-age=31536000" },
       "dest": "/static/$1"
     },
     {
-      "src": "/img/(.*)",
-      "headers": { "cache-control": "s-maxage=604800" },
-      "dest": "/img/$1"
-    },
-    {
       "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=604800" },
+      "headers": { "cache-control": "max-age=604800" },
       "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/index.html"
     }
   ]
 }
