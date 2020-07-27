@@ -9,22 +9,13 @@
 
 > My personal web developer portfolio
 
-## Demo
+## Live Preview
 
-Demo: [https://peter-stuhlmann-webentwicklung.de/](https://peter-stuhlmann-webentwicklung.de/?source=github)
+Live Preview: [https://peter-stuhlmann-webentwicklung.de/](https://peter-stuhlmann-webentwicklung.de/?source=github)
 
-## Adjust the dummy content
+## How to run the app
 
-If you clone this repository and start it with the command `$ npm start` you will see dummy content.
-To use "real" content, adapt the following files:
-
-- src/components/Header.js _(there you should change the background image urls; different formats and sizes)_
-- src/data/Content.js _(is used for the whole text content except the legal texts)_
-- src/data/Icons.js _(is used for all icons in contact and tech stack section)_
-- src/components/LegalNotice.js _(use your own data, maybe you should adjust the texts to your own needs)_
-- src/components/PrivacyPolicy.js _(use your own data, maybe you should adjust the texts to your own needs)_
-- src/helpers/analytics.js _(use your tracking code)_
-- public/img/ _(there you should replace all images)_
+If you want to run this project locally, clone this repository, install node modules with the command `$ npm i` or `yarn` and start it with `$ npm start` or `$ yarn start`. Please note that this only works on `localhost:3000` or `localhost:3001`. Otherwise there is an error message. This is due to CORS settings in the API that supplies the content of the app.
 
 ---
 
