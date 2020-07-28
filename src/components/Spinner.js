@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Context } from '../Context';
 
 export default function Spinner() {
-  const { content } = useContext(Context);
+  const { language } = useContext(Context);
 
   return (
     <Loading>
@@ -255,7 +255,7 @@ export default function Spinner() {
           </g>
         </g>
       </svg>
-      <p>{content.loading}</p>
+      <p>{language === 'english' ? 'Loading...' : 'Inhalt wird geladen...'}</p>
     </Loading>
   );
 }
