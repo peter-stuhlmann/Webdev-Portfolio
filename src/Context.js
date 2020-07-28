@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
+import Spinner from './components/Spinner';
+import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { useLocalStorage } from './helpers/useLocalStorage';
 import { useFetch } from './helpers/useFetch';
 
@@ -58,5 +60,16 @@ export default function ContextProvider({ children }) {
   } else if (fetched && fetched.error) {
     return 'Es ist ein Fehler aufgetreten. Bitte besuchen Sie uns zu einem späteren Zeitpunkt erneut.';
   }
-  return 'Loading...';
+  return (
+    <Context.Provider
+      value={{
+        language,
+      }}
+    >
+      <Fragment>
+        <GlobalStyles />
+        <Spinner />
+      </Fragment>
+    </Context.Provider>
+  );
 }
