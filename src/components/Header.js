@@ -25,8 +25,17 @@ const XxlJpeg =
   'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xxl.jpg';
 
 export default function Header() {
+  const headerImage = React.createRef();
+
+  React.useEffect(() => {
+    window.onscroll = () => {
+      headerImage.current.style.backgroundPositionY = `-${window.pageYOffset *
+        0.25}px`;
+    };
+  }, [headerImage]);
+
   return (
-    <StyledHeader id="top">
+    <StyledHeader id="top" ref={headerImage}>
       <TypingEffect />
       <ContactIcons header />
       <ScrollDown />
