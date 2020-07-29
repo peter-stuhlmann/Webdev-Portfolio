@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ContextProvider from './Context';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import Spinner from './components/Spinner';
+import CookieConsentBanner from './components/CookieConsentBanner';
 import Router from './components/Router';
 
 import IE from './components/IE';
@@ -23,6 +24,7 @@ export default function App() {
     <ContextProvider>
       <BrowserRouter>
         <Suspense fallback={<Spinner />}>
+          <CookieConsentBanner />
           <MainNavigation />
           <ScrollToTop />
           <GlobalStyles />

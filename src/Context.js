@@ -4,6 +4,8 @@ import Spinner from './components/Spinner';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { useLocalStorage } from './helpers/useLocalStorage';
 import { useFetch } from './helpers/useFetch';
+import { trackingCode } from './helpers/analytics';
+import Cookies from 'js-cookie';
 
 export const Context = React.createContext(null);
 
@@ -35,6 +37,29 @@ export default function ContextProvider({ children }) {
     return null;
   };
 
+  // cookies
+  const [cookieOptIn, setCookieOptIn] = useState(Cookies.get('cookie-opt-in'));
+
+  const optIn = () => {
+    setCookieOptIn(true);
+    Cookies.set('cookie-opt-in', true, { expires: 90 });
+    window.location.reload();
+  };
+
+  const optOut = () => {
+    setCookieOptIn(false);
+    Cookies.set('cookie-opt-in', false, { expires: 90 });
+  };
+
+  // analytics
+  if (cookieOptIn === 'true') {
+    document.cookie = `Disable ${trackingCode}=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+    window[`ga-disable-${trackingCode}`] = false;
+  } else {
+    document.cookie = `Disable ${trackingCode}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+    window[`ga-disable-${trackingCode}`] = true;
+  }
+
   // fetch content
   const fetched = useFetch('https://webdev-portfolio-api.vercel.app');
 
@@ -52,6 +77,10 @@ export default function ContextProvider({ children }) {
           languageButton,
           setLanguageButton,
           changeLanguage,
+          cookieOptIn,
+          setCookieOptIn,
+          optIn,
+          optOut,
         }}
       >
         {children}
