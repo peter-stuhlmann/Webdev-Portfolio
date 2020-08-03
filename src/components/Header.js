@@ -29,7 +29,7 @@ export default function Header() {
 
   React.useEffect(() => {
     window.onscroll = () => {
-      headerImage.current.style.backgroundPositionY = `-${window.pageYOffset *
+      headerImage.current.style.backgroundPositionY = `${window.pageYOffset *
         0.25}px`;
     };
   }, [headerImage]);
@@ -52,7 +52,6 @@ const StyledHeader = styled.header`
   overflow: hidden;
   background-image: url('${WebP() ? XxlWebP : XxlJpeg}');
   background-color: #454545;
-  background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -65,7 +64,6 @@ const StyledHeader = styled.header`
   }
   
   @media (max-width: 850px) {
-    background-attachment: initial;
     background-image: url('${WebP() ? LWebP : LJpeg}');
   }
 
