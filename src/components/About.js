@@ -13,7 +13,7 @@ export default function About() {
     if (inView) {
       setOpacity('1');
     }
-  });
+  }, [inView]);
 
   return (
     <section

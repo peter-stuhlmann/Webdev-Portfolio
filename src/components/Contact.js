@@ -13,7 +13,7 @@ export default function Contact() {
     if (inView) {
       setOpacity('1');
     }
-  });
+  }, [inView]);
 
   return (
     <section

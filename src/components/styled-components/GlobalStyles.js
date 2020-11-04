@@ -1,4 +1,3 @@
-import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import RalewayRegular from '../../assets/fonts/raleway/Raleway-Regular.ttf';
 import SourceCodeProRegular from '../../assets/fonts/source-code-pro/SourceCodePro-Regular.ttf';

@@ -16,7 +16,7 @@ export default function PortfolioItem(props) {
     if (inView) {
       setOpacity('1');
     }
-  });
+  }, [inView]);
 
   const { title, description, techStack, liveDemo, githubLink } = props.item;
 

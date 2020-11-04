@@ -13,7 +13,7 @@ export default function TechStack() {
     if (inView) {
       setOpacity('1');
     }
-  });
+  }, [inView]);
 
   return (
     <section

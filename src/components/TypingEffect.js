@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Typist from 'react-typist';
 
