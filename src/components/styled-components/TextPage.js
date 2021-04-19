@@ -12,6 +12,6 @@ const StyledTextPage = styled.section`
   }
 `;
 
-export const TextPage = props => (
+export const TextPage = (props) => (
   <StyledTextPage>{props.children}</StyledTextPage>
 );

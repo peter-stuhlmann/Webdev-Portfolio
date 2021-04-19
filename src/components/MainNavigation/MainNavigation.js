@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
-    const listener = event => {
+    const listener = (event) => {
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }
@@ -47,10 +47,10 @@ const Backdrop = createGlobalStyle`
   body::after {
     content: '';
     transition: opacity 0.3s ease-in-out;
-    opacity: ${props => (props.open ? '1' : '0')};
+    opacity: ${(props) => (props.open ? '1' : '0')};
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 3;
-    transform: ${props =>
+    transform: ${(props) =>
       props.open ? 'translateX(0)' : 'translateX(calc(-100%))'};
     position: fixed;
     top: 0;

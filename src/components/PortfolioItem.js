@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
-import { WebP } from '../helpers/DetectBrowserSupport';
 
+import { WebP } from '../helpers/DetectBrowserSupport';
 import { Context } from '../Context';
 import GithubCorner from './GithubCorner';
 import { ButtonLink } from './styled-components/Button';
 
 export default function PortfolioItem(props) {
   const { content } = useContext(Context);
+
   const [portfolioItem, inView] = useInView();
   const [opacity, setOpacity] = useState('0');
 

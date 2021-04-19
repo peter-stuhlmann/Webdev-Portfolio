@@ -8,7 +8,7 @@ export default function ContactIcons(props) {
 
   return (
     <StyledContactIcons header={props.header}>
-      {icons.contact.map(icon => (
+      {icons.contact.map((icon) => (
         <a
           key={icon.href}
           target="_blank"
@@ -26,8 +26,8 @@ export default function ContactIcons(props) {
 }
 
 const StyledContactIcons = styled.div`
-  position: ${props => (props.header ? 'absolute' : 'static')};
-  left: ${props => (props.header ? '30px' : null)};
+  position: ${(props) => (props.header ? 'absolute' : 'static')};
+  left: ${(props) => (props.header ? '30px' : null)};
   text-align: center;
 
   @media (max-width: 850px) {
@@ -35,10 +35,10 @@ const StyledContactIcons = styled.div`
   }
 
   a {
-    display: ${props => (props.header ? 'block' : 'inline-block')};
+    display: ${(props) => (props.header ? 'block' : 'inline-block')};
     padding: 10px 0px;
     text-decoration: none;
-    color: ${props => (props.header ? '#fff' : '#a7a7a7')};
+    color: ${(props) => (props.header ? '#fff' : '#a7a7a7')};
     z-index: 1000;
 
     @media (max-width: 850px) {
@@ -62,7 +62,7 @@ const StyledContactIcons = styled.div`
     &::before {
       margin-right: 6px;
       content: '{';
-      font-size: ${props => (props.header ? '28px' : '44px')};
+      font-size: ${(props) => (props.header ? '28px' : '44px')};
       transform: translateX(10px);
       z-index: -1;
     }
@@ -70,7 +70,7 @@ const StyledContactIcons = styled.div`
     &::after {
       margin-left: 6px;
       content: '}';
-      font-size: ${props => (props.header ? '28px' : '44px')};
+      font-size: ${(props) => (props.header ? '28px' : '44px')};
       transform: translateX(-10px);
       z-index: -1;
     }
@@ -82,8 +82,8 @@ const StyledContactIcons = styled.div`
     }
 
     svg {
-      width: ${props => (props.header ? '20px' : '30px')};
-      fill: ${props => (props.header ? '#fff' : '#a7a7a7')};
+      width: ${(props) => (props.header ? '20px' : '30px')};
+      fill: ${(props) => (props.header ? '#fff' : '#a7a7a7')};
 
       @media (max-width: 850px) {
         width: 30px;

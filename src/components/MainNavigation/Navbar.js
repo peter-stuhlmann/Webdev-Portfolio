@@ -11,7 +11,7 @@ function Navbar({ open, setOpen }) {
 
   return (
     <StyledNavbar open={open}>
-      {content.header.navigation.map(links => (
+      {content.header.navigation.map((links) => (
         <HashLink
           smooth
           key={links.href}

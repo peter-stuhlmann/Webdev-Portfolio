@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { TextPage } from './styled-components/TextPage';
 
 export default function LegalNotice() {

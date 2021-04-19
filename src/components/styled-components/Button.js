@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const ButtonLink = props => {
+export const ButtonLink = (props) => {
   const { className, href, linkText, title, style } = props;
 
   return (

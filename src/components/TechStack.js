@@ -29,7 +29,7 @@ export default function TechStack() {
           <h2>{content.techStack.heading}</h2>
           <p className="description">{content.techStack.description}</p>
           <StyledTechStack>
-            {icons.techStack.map(icon => (
+            {icons.techStack.map((icon) => (
               <li key={icon.src}>
                 <img src={icon.src} alt={icon.alt} loading="lazy" />
               </li>

@@ -6,8 +6,8 @@ import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import Spinner from './components/Spinner';
 import CookieConsentBanner from './components/CookieConsentBanner';
 import Router from './components/Router';
-
 import IE from './components/IE';
+
 const ScrollToTop = lazy(() => import('./components/ScrollToTop'));
 const MainNavigation = lazy(() =>
   import('./components/MainNavigation/MainNavigation')

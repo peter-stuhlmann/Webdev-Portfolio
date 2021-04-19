@@ -15,7 +15,7 @@ export default function Footer() {
         {content.footer.copyright.startYear} - {currentYear}
       </p>
       <nav>
-        {content.footer.nav.map(link => (
+        {content.footer.nav.map((link) => (
           <Link key={link.href} to={link.href}>
             {link.linkText}
           </Link>

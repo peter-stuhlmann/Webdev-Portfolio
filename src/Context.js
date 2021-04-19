@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from 'react';
+import Cookies from 'js-cookie';
 
 import Spinner from './components/Spinner';
 import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { useLocalStorage } from './helpers/useLocalStorage';
 import { useFetch } from './helpers/useFetch';
 import { trackingCode } from './helpers/analytics';
-import Cookies from 'js-cookie';
 
 export const Context = React.createContext(null);
 
