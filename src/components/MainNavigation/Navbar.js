@@ -9,6 +9,12 @@ import styled from 'styled-components';
 function Navbar({ open, setOpen }) {
   const { content, changeLanguage, languageButton } = useContext(Context);
 
+  const scrollOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -55;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <StyledNavbar open={open}>
       {content.header.navigation.map((links) => (
@@ -17,6 +23,7 @@ function Navbar({ open, setOpen }) {
           key={links.href}
           to={links.href}
           onClick={() => setOpen(false)}
+          scroll={scrollOffset}
         >
           {links.linkText}
         </HashLink>
