@@ -1,17 +1,16 @@
-import React, { Fragment, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import { Context } from '../Context';
 
-export default function GithubCorner() {
+export default function GithubCorner(props) {
+  const { githubLink } = props;
+
   const { content } = useContext(Context);
 
   return (
-    <Fragment>
-      {content.portfolio.items.map((item, index) => (
         <Octocat
-          href={item.githubLink}
-          key={index}
+          href={githubLink}
           aria-label={content.portfolio.octocat.ariaLabel}
         >
           <svg width="80" height="80" viewBox="0 0 250 250">
@@ -30,8 +29,6 @@ export default function GithubCorner() {
             />
           </svg>
         </Octocat>
-      ))}
-    </Fragment>
   );
 }
 

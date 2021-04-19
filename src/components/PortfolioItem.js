@@ -64,7 +64,7 @@ export default function PortfolioItem(props) {
             className="button"
           />
         )}
-        {githubLink && <GithubCorner />}
+        {githubLink && <GithubCorner githubLink={githubLink} />}
       </div>
     </StyledPortfolioItem>
   );
