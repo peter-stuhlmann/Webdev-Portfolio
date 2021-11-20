@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import PortfolioItem from './PortfolioItem';
+import AnimatedTitle from './AnimatedTitle';
+
 import { Context } from '../Context';
 
 export default function Portfolio() {
@@ -27,7 +29,7 @@ export default function Portfolio() {
     >
       <div className="wrap">
         <article>
-          <h2>{content.portfolio.heading}</h2>
+          <AnimatedTitle data={content.portfolio.heading} />
           <p className="description">{content.portfolio.description}</p>
         </article>
       </div>

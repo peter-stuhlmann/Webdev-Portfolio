@@ -4,6 +4,8 @@ import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 
+import AnimatedTitle from './AnimatedTitle';
+
 export default function TechStack() {
   const { content, icons } = useContext(Context);
   const [techstack, inView] = useInView();
@@ -26,7 +28,7 @@ export default function TechStack() {
     >
       <div className="wrap">
         <article ref={techstack}>
-          <h2>{content.techStack.heading}</h2>
+          <AnimatedTitle data={content.techStack.heading} />
           <p className="description">{content.techStack.description}</p>
           <StyledTechStack>
             {icons.techStack.map((icon) => (

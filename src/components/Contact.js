@@ -4,6 +4,8 @@ import { useInView } from 'react-intersection-observer';
 import { Context } from '../Context';
 import ContactIcons from './ContactIcons';
 
+import AnimatedTitle from './AnimatedTitle';
+
 export default function Contact() {
   const { content, language } = useContext(Context);
   const [contact, inView] = useInView();
@@ -26,7 +28,7 @@ export default function Contact() {
     >
       <div className="wrap">
         <article style={{ marginBottom: '100px' }} ref={contact}>
-          <h2>{content.contact.heading}</h2>
+          <AnimatedTitle data={content.contact.heading} />
           <p className="description">{content.contact.description}</p>
           <ContactIcons />
         </article>

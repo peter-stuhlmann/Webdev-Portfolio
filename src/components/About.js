@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import { ButtonLink as Button } from './styled-components/Button';
+import AnimatedTitle from './AnimatedTitle';
 
 export default function About() {
   const { content, language } = useContext(Context);
@@ -26,7 +27,7 @@ export default function About() {
     >
       <div className="wrap">
         <article ref={about}>
-          <h2>{content.about.heading}</h2>
+          <AnimatedTitle data={content.about.heading} />
           <p className="description">{content.about.description}</p>
           <p>{content.about.text}</p>
         </article>
