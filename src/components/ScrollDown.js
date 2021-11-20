@@ -1,20 +1,31 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 
 import { Context } from '../Context';
 
 export default function ScrollDown() {
   const { content, language } = useContext(Context);
 
+  const scrollOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -55;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
-    <StyledScrollDown href={language === 'german' ? '#ueber-mich' : '#about'}>
+    <StyledScrollDown
+      smooth
+      to={language === 'german' ? '#ueber-mich' : '#about'}
+      scroll={scrollOffset}
+    >
       <span>{content.header.scrollDown}</span>
       <span />
     </StyledScrollDown>
   );
 }
 
-const StyledScrollDown = styled.a`
+const StyledScrollDown = styled(HashLink)`
   position: absolute;
   right: 30px;
   bottom: 0;
