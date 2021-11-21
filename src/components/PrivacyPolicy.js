@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 import { TextPage } from './styled-components/TextPage';
+import { Context } from '../Context';
+import Alert from './Alert';
 
 export default function PrivacyPolicy() {
+  const { language } = useContext(Context);
+
   return (
     <TextPage>
       <div className="wrap">
+        {language !== 'german' && (
+          <Alert type="warning">This page is only available in German.</Alert>
+        )}
         <h1>Datenschutzerklärung</h1>
         <h2>1. Datenschutz auf einen Blick</h2>
         <h3>Allgemeine Hinweise</h3>

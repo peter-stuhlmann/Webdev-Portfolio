@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { TextPage } from './styled-components/TextPage';
+import { Context } from '../Context';
+import Alert from './Alert';
 
 export default function LegalNotice() {
+  const { language } = useContext(Context);
+
   return (
     <TextPage>
       <div className="wrap">
+        {language !== 'german' && (
+          <Alert type="warning">This page is only available in German.</Alert>
+        )}
+
         <h1>Impressum</h1>
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
