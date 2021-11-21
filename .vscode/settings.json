@@ -1,11 +1,17 @@
 {
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
-  ],
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.insertSpaces": true,
+  "eslint.validate": ["javascript"],
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
   "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
-  "editor.formatOnSave": true
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.tabCompletion": "on",
+  "editor.formatOnSave": true,
+  "diffEditor.ignoreTrimWhitespace": true
 }
