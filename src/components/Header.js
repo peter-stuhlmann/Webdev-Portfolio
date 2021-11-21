@@ -35,7 +35,7 @@ export default function Header() {
   }, [headerImage]);
 
   return (
-    <StyledHeader id="top" ref={headerImage}>
+    <StyledHeader ref={headerImage}>
       <TypingEffect />
       <ContactIcons header />
       <ScrollDown />

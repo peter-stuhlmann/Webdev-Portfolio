@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
 import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
@@ -28,15 +27,19 @@ export default function MainNavigation() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
       <div className="site-title-desktop">
-        <HashLink to="/#top">{content.siteTitle.desktop}</HashLink>
+        <div onClick={() => scrollToTop()}>{content.siteTitle.desktop}</div>
       </div>
       <Navbar open={open} setOpen={setOpen} />
       <div className="site-title-mobile">
-        <HashLink to="/#top">{content.siteTitle.mobile}</HashLink>
+        <div onClick={() => scrollToTop()}>{content.siteTitle.mobile}</div>
       </div>
       <Backdrop open={open} />
     </StyledMainNavigation>
@@ -84,10 +87,11 @@ const StyledMainNavigation = styled.div`
       display: none;
     }
 
-    a {
+    div {
       color: #fff;
       letter-spacing: 1.5px;
-      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
     }
   }
 
@@ -100,10 +104,11 @@ const StyledMainNavigation = styled.div`
       display: none;
     }
 
-    a {
+    div {
       color: #fff;
       letter-spacing: 1.5px;
-      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
     }
   }
 `;
