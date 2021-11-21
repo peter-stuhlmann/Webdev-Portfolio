@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+import './assets/css/global.css';
+
 import ContextProvider from './Context';
-import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import Spinner from './components/Spinner';
 import CookieConsentBanner from './components/CookieConsentBanner';
 import Router from './components/Router';
@@ -27,7 +28,6 @@ export default function App() {
           <CookieConsentBanner />
           <MainNavigation />
           <ScrollToTop />
-          <GlobalStyles />
           <Router />
           <Footer />
         </Suspense>
