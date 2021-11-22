@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react';
 import Cookies from 'js-cookie';
 
 import Spinner from './components/Spinner';
-import { GlobalStyles } from './components/styled-components/GlobalStyles';
 import { useLocalStorage } from './helpers/useLocalStorage';
 import { useFetch } from './helpers/useFetch';
 import { trackingCode } from './helpers/analytics';
@@ -96,7 +95,6 @@ export default function ContextProvider({ children }) {
       }}
     >
       <Fragment>
-        <GlobalStyles />
         <Spinner />
       </Fragment>
     </Context.Provider>
