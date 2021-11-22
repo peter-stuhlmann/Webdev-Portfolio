@@ -33,7 +33,7 @@ const StyledFooter = styled.footer`
   background-color: #24292e;
 
   p {
-    color: grey;
+    color: #929090;
     margin: 0;
 
     @media screen and (max-width: 768px) {
@@ -43,7 +43,7 @@ const StyledFooter = styled.footer`
 
     a {
       text-decoration: none;
-      color: grey;
+      color: #929090;
 
       @media screen and (max-width: 768px) {
         flex: 0 0 100%;
@@ -65,7 +65,7 @@ const StyledFooter = styled.footer`
 
     a {
       text-decoration: none;
-      color: grey;
+      color: #929090;
 
       &:first-child {
         margin-right: 25px;

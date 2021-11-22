@@ -33,7 +33,13 @@ export default function TechStack() {
           <StyledTechStack>
             {icons.techStack.map((icon) => (
               <li key={icon.src}>
-                <img src={icon.src} alt={icon.alt} loading="lazy" />
+                <img
+                  src={icon.src}
+                  alt={icon.alt}
+                  loading="lazy"
+                  width="100%"
+                  height="75"
+                />
               </li>
             ))}
           </StyledTechStack>
@@ -78,12 +84,7 @@ const StyledTechStack = styled.ul`
     img {
       max-width: 100%;
       max-height: 75px;
-      // filter: grayscale(100%);
-      // transition: all 0.2s ease;
-
-      // &:hover {
-      //  filter: grayscale(0%);
-      // }
+      object-fit: contain;
     }
   }
 `;

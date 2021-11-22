@@ -32,6 +32,8 @@ function Navbar({ open, setOpen }) {
         src={languageButton === 'EN' ? English : German}
         onClick={() => changeLanguage()}
         alt={languageButton}
+        height="15"
+        width="25.71"
       />
     </StyledNavbar>
   );

@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'WebDevFont Regular';
   src: url('../../assets/fonts/raleway/Raleway-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'WebDevFont SourceCode';
   src: url('../../assets/fonts/source-code-pro/SourceCodePro-Regular.ttf');
+  font-display: swap;
 }
 
 html {
