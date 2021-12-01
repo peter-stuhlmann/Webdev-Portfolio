@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
@@ -22,11 +23,15 @@ export default function MainNavigation() {
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
       <div className="site-title-desktop">
-        <div onClick={() => scrollToTop()}>{content.siteTitle.desktop}</div>
+        <Link to="/" onClick={() => scrollToTop()}>
+          {content.siteTitle.desktop}
+        </Link>
       </div>
       <Navbar open={open} setOpen={setOpen} />
       <div className="site-title-mobile">
-        <div onClick={() => scrollToTop()}>{content.siteTitle.mobile}</div>
+        <Link to="/" onClick={() => scrollToTop()}>
+          {content.siteTitle.mobile}
+        </Link>
       </div>
       <Backdrop open={open} />
     </StyledMainNavigation>
@@ -74,11 +79,10 @@ const StyledMainNavigation = styled.div`
       display: none;
     }
 
-    div {
+    a {
       color: #fff;
       letter-spacing: 1.5px;
-      font-weight: bold;
-      cursor: pointer;
+      text-decoration: none;
     }
   }
 
@@ -91,11 +95,10 @@ const StyledMainNavigation = styled.div`
       display: none;
     }
 
-    div {
+    a {
       color: #fff;
       letter-spacing: 1.5px;
-      font-weight: bold;
-      cursor: pointer;
+      text-decoration: none;
     }
   }
 `;
