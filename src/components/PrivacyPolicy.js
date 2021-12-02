@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         {language !== 'german' && (
           <Alert type="warning">This page is only available in German.</Alert>
         )}
-        <h1>Datenschutzerklärung</h1>
+        <h1>Daten&shy;schutz&shy;erklärung</h1>
         <h2>1. Datenschutz auf einen Blick</h2>
         <h3>Allgemeine Hinweise</h3>
         <p>

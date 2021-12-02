@@ -47,6 +47,7 @@ const StyledStats = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: flex-start;
 
   & > div {
     display: flex;
@@ -59,6 +60,16 @@ const StyledStats = styled.div`
 
       &:first-child {
         font-size: 3em;
+
+        @media (max-width: 480px) {
+          font-size: 2em;
+        }
+      }
+
+      &:last-child {
+        @media (max-width: 480px) {
+          font-size: 0.7em;
+        }
       }
     }
   }
