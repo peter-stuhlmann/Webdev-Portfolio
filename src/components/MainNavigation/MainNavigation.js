@@ -6,6 +6,7 @@ import { Context } from '../../Context';
 import ToggleButton from './ToggleButton';
 import Navbar from './Navbar';
 import { useOnClickOutside } from '../../helpers/useOnClickOutside';
+import useWindowSize from '../../helpers/useWindowSize';
 
 export default function MainNavigation() {
   const { content } = useContext(Context);
@@ -19,20 +20,17 @@ export default function MainNavigation() {
     window.scrollTo(0, 0);
   };
 
+  const { width } = useWindowSize();
+
   return (
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
-      <div className="site-title-desktop">
+      <Title>
         <Link to="/" onClick={() => scrollToTop()}>
-          {content.siteTitle.desktop}
+          {width > 850 ? content.siteTitle.desktop : content.siteTitle.mobile}
         </Link>
-      </div>
+      </Title>
       <Navbar open={open} setOpen={setOpen} />
-      <div className="site-title-mobile">
-        <Link to="/" onClick={() => scrollToTop()}>
-          {content.siteTitle.mobile}
-        </Link>
-      </div>
     </StyledMainNavigation>
   );
 }
@@ -50,36 +48,20 @@ const StyledMainNavigation = styled.div`
     font-weight: bold;
     letter-spacing: 1.5px;
   }
+`;
 
-  .site-title-desktop {
-    margin-left: 15px;
-    padding: 2px 0;
-    white-space: nowrap;
+const Title = styled.div`
+  margin-left: 15px;
+  white-space: nowrap;
 
-    @media (max-width: 869px) {
-      display: none;
-    }
-
-    a {
-      color: #fff;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-    }
+  a {
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-decoration: none;
   }
 
-  .site-title-mobile {
-    margin-left: 15px;
+  @media (max-width: 869px) {
     text-align: center;
     width: 100%;
-
-    @media (min-width: 870px) {
-      display: none;
-    }
-
-    a {
-      color: #fff;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-    }
   }
 `;
