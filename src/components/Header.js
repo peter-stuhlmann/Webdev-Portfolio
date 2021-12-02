@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import ContactIcons from './ContactIcons';
@@ -25,12 +25,18 @@ const XxlJpeg =
   'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xxl.jpg';
 
 export default function Header() {
-  const headerImage = React.createRef();
+  const headerImage = useRef();
 
-  React.useEffect(() => {
-    window.onscroll = () => {
-      headerImage.current.style.backgroundPositionY = `${window.pageYOffset *
-        0.25}px`;
+  useEffect(() => {
+    const parallax = () => {
+      if (headerImage.current) {
+        headerImage.current.style.backgroundPositionY = `${window.pageYOffset *
+          0.25}px`;
+      }
+    };
+    window.addEventListener('scroll', parallax);
+    return () => {
+      window.removeEventListener('scroll', parallax);
     };
   }, [headerImage]);
 
