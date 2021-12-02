@@ -30,7 +30,7 @@ const StyledToggleButton = styled.button`
   height: 25px;
   justify-content: space-around;
   padding: 0;
-  width: 26px;
+  width: 25px;
   z-index: 2;
 
   &:focus {
@@ -44,7 +44,7 @@ const StyledToggleButton = styled.button`
     position: relative;
     transform-origin: 1px;
     transition: all 0.3s linear;
-    width: 26px;
+    width: 25px;
 
     :first-child {
       transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};

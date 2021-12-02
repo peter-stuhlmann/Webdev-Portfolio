@@ -47,18 +47,18 @@ const StyledNavbar = styled.nav`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+  width: 100vw;
   left: 0;
-  max-width: 80vw;
   overflow-y: auto;
   padding: 0;
   position: fixed;
-  text-align: left;
   top: 0;
   transform: ${({ open }) =>
     open ? 'translateX(0)' : 'translateX(calc(-100% - 7px))'};
   transition: transform 0.3s ease-in-out;
-  width: 300px;
 
   @media (min-width: 1650px) {
     text-align: right;
@@ -79,10 +79,6 @@ const StyledNavbar = styled.nav`
 
     @media (max-width: 869px) {
       font-size: 20px;
-    }
-
-    &:first-child {
-      margin-top: 45px;
     }
   }
 
