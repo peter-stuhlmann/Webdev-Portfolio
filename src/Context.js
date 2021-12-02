@@ -60,7 +60,7 @@ export default function ContextProvider({ children }) {
   }
 
   // fetch content
-  const fetched = useFetch('https://webdev-portfolio-api.vercel.app');
+  const fetched = useFetch(process.env.REACT_APP_API);
 
   if (fetched && fetched.response) {
     const content = fetched.response.data.content[language];

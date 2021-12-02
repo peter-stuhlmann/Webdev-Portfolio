@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 
-export const trackingCode = 'UA-XXXXXXXX-X';
+export const trackingCode = process.env.REACT_APP_GA;
 
 ReactGA.initialize(trackingCode);
 ReactGA.set({ anonymizeIp: true });

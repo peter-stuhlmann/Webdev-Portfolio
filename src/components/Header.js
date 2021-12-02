@@ -7,22 +7,14 @@ import TypingEffect from './TypingEffect';
 import { WebP } from '../helpers/DetectBrowserSupport';
 
 // background images for different screen sizes
-const MWebP =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-m.webp';
-const MJpeg =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-m.jpg';
-const LWebP =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-l.webp';
-const LJpeg =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-l.jpg';
-const XlWebP =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xl.webp';
-const XlJpeg =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xl.jpg';
-const XxlWebP =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xxl.webp';
-const XxlJpeg =
-  'https://webdev-portfolio-api.vercel.app/img/peter-stuhlmann-xxl.jpg';
+const MWebP = `${process.env.REACT_APP_API}/img/peter-stuhlmann-m.webp`;
+const MJpeg = `${process.env.REACT_APP_API}/img/peter-stuhlmann-m.jpg`;
+const LWebP = `${process.env.REACT_APP_API}/img/peter-stuhlmann-l.webp`;
+const LJpeg = `${process.env.REACT_APP_API}/img/peter-stuhlmann-l.jpg`;
+const XlWebP = `${process.env.REACT_APP_API}/img/peter-stuhlmann-xl.webp`;
+const XlJpeg = `${process.env.REACT_APP_API}/img/peter-stuhlmann-xl.jpg`;
+const XxlWebP = `${process.env.REACT_APP_API}/img/peter-stuhlmann-xxl.webp`;
+const XxlJpeg = `${process.env.REACT_APP_API}/img/peter-stuhlmann-xxl.jpg`;
 
 export default function Header() {
   const headerImage = useRef();
