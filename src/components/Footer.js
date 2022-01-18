@@ -20,7 +20,7 @@ export default function Footer() {
         rel="noopener noreferrer"
       >
         <img src={content.footer.notice.img} alt={content.footer.text} />
-        {content.footer.notice.text[0]}
+        <span>{content.footer.notice.text[0]}</span>
         <span>{content.footer.notice.text[1]}</span>
       </a>
       <nav>
@@ -78,6 +78,7 @@ const StyledFooter = styled.footer`
 
     span {
       margin-left: 5px;
+      flex: 1 0 auto;
 
       @media screen and (max-width: 480px) {
         display: none;
